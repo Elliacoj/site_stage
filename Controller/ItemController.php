@@ -27,4 +27,12 @@ class ItemController
     public function addItem($data) {
         ObjectController::add("INSERT INTO item VALUES ($data)");
     }
+
+    /**
+     * Delete a item in table item
+     * @param $id
+     */
+    public function deleteItem($id) {
+        ObjectController::delete("DELETE FROM item WHERE id = $id)");
+    }
 }

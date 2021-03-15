@@ -17,4 +17,12 @@ class UserController
     public function addUser($data) {
         ObjectController::add("INSERT INTO user VALUES ($data)");
     }
+
+    /**
+     * Delete a user in table user
+     * @param $id
+     */
+    public function deleteUser($id) {
+        ObjectController::delete("DELETE FROM user WHERE id = $id)");
+    }
 }

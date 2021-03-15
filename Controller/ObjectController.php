@@ -86,4 +86,13 @@ class ObjectController {
     public static function add($sql) {
         DB::getInstance()->exec($sql);
     }
+
+    /**
+     * Delete a data in table
+     * @param $sql
+     */
+    public static function delete($sql) {
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->execute();
+    }
 }

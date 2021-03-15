@@ -27,4 +27,12 @@ class RoleController
     public function addRole($data) {
         ObjectController::add("INSERT INTO role VALUES ($data)");
     }
+
+    /**
+     * Delete a role in table role
+     * @param $id
+     */
+    public function deleteRole($id) {
+        ObjectController::delete("DELETE FROM role WHERE id = $id)");
+    }
 }

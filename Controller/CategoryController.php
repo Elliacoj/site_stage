@@ -26,4 +26,12 @@ class CategoryController
     public function addCategory($data) {
         ObjectController::add("INSERT INTO category VALUES ($data)");
     }
+
+    /**
+     * Delete a category in table category
+     * @param $id
+     */
+    public function deleteCategory($id) {
+        ObjectController::delete("DELETE FROM category WHERE id = $id)");
+    }
 }
