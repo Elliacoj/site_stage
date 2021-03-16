@@ -15,7 +15,7 @@ class UserController
      * @param $data
      */
     public function addUser($data) {
-        ObjectController::add("INSERT INTO user VALUES ($data)");
+        return ObjectController::add("INSERT INTO user VALUES ($data)");
     }
 
     /**

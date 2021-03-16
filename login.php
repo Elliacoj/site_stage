@@ -2,7 +2,7 @@
 require_once "require.php";
 
 if(isset($_POST['error'], $_POST['e-mail'], $_POST['password']) && $_POST['error'] === "0") {
-    $mail = base64_decode(json_decode($_POST['e-mail']));
+    $mail = json_decode(base64_decode($_POST['e-mail']));
     $mail = strip_tags(trim($mail));
     $password = base64_decode(json_decode($_POST['password']));
     $password = strip_tags(trim($password));
@@ -27,11 +27,11 @@ if(isset($_POST['error'], $_POST['e-mail'], $_POST['password']) && $_POST['error
                 header("location: ./view/home.php");
             }
             else {
-                header('location:./view/index.php?error=2');
+                header('location: ./view/index.php?error=2');
             }
         }
         else {
-            header('location:./view/index.php?error=1');
+            header('location: ./view/index.php?error=1');
         }
     }
 }

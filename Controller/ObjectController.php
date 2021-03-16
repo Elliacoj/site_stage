@@ -97,7 +97,7 @@ class ObjectController {
      * @param $sql
      */
     public static function add($sql) {
-        DB::getInstance()->exec($sql);
+        return DB::getInstance()->exec($sql);
     }
 
     /**

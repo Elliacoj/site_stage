@@ -82,7 +82,7 @@ class Document
      */
     public function getCategory(): ?string
     {
-        return $this->category;
+        return $this->category->getName();
     }
 
     /**
@@ -102,7 +102,7 @@ class Document
      */
     public function getItem(): ?string
     {
-        return $this->item;
+        return $this->item->getName();
     }
 
     /**
