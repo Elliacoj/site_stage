@@ -1,12 +1,11 @@
 <?php
 require_once "require.php";
 
-$categories = new DocumentController();
+$categories = new UserController();
 
-echo "<pre>";
-print_r($categories->getDocument());
-echo "</pre>";
 
-$data = "null, 'Jocaille', 'Amaury', 'azerty', 'sfzef@gmail.com', '2'";
-$newUser = new UserController();
-$newUser->addUser($data);
+$user = $categories->logUser("aml@hotmail.com");
+
+
+    echo $user->getRole();
+

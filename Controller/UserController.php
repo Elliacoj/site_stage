@@ -7,7 +7,7 @@ class UserController
      * @return array
      */
     public function getUser(): array {
-        return ObjectController::get("SELECT * FROM user LEFT JOIN role ON role.id = user.role_fk", User::class);
+        return ObjectController::get("SELECT * FROM user", User::class);
     }
 
     /**
@@ -24,5 +24,9 @@ class UserController
      */
     public function deleteUser($id) {
         ObjectController::delete("DELETE FROM user WHERE id = $id)");
+    }
+
+    public function logUser($mail): object {
+        return ObjectController::search("SELECT * FROM user  WHERE mail = '$mail' LIMIT 1", User::class);
     }
 }

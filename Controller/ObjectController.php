@@ -34,7 +34,6 @@ class ObjectController {
                             }
                         }
                         elseif($reflexion->hasMethod($method)) {
-                            echo $entity_line['default_visibility'];
                             $entity->$method($value);
                         }
                     }
@@ -62,13 +61,27 @@ class ObjectController {
 
             $stmt = DB::getInstance()->prepare($sql);
             $res = $stmt->execute();
+
             if($res) {
                 $entity_line = $stmt->fetch();
                 $entity = new $class($entity_line['id']);
+
                 foreach($entity_line as $key => $value) {
                     $method = "set" . ucfirst($key);
 
-                    if($reflexion->hasMethod($method)) {
+                    if(strpos($key, "_fk")) {
+                        $key = substr($key, 0 , strpos($key, "_"));
+                        $item = ucfirst($key);
+                        $itemController = $item . "Controller";
+                        $itemController = new $itemController();
+                        $search = "search" . $item;
+                        $method = "set". $item;
+                        $rid = $itemController->$search($value);
+                        if($rid) {
+                            $entity->$method($rid);
+                        }
+                    }
+                    elseif($reflexion->hasMethod($method)) {
                         $entity->$method($value);
                     }
                 }

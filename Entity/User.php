@@ -120,7 +120,7 @@ class User
      */
     public function getRole(): ?string
     {
-        return $this->role;
+        return $this->role->getName();
     }
 
     /**

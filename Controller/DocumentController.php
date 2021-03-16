@@ -8,7 +8,7 @@ class DocumentController
      * @return array
      */
     public function getDocument(): array {
-        return ObjectController::get("SELECT * FROM document LEFT JOIN category ON category.id = document.category_fk LEFT JOIN item ON item.id = document.item_fk", Document::class);
+        return ObjectController::get("SELECT * FROM document", Document::class);
     }
 
     /**
