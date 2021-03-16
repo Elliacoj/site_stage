@@ -10,4 +10,3 @@ $user = $categories->logUser("aml@hotmail.com");
     echo $user->getRole();
 
 // header("location: ./view/index.php");
-echo "boo";
