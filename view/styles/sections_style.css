@@ -1,0 +1,95 @@
+.course_type {
+    margin-bottom: 2rem;
+    height: min-content;
+    border-radius: 20px;
+    width: 75%;
+    flex-direction: column;
+}
+
+.course_information {
+    height: 4rem;
+}
+
+.course_tittle {
+    font-size: 2rem;
+}
+
+.course_tittle, .course_documents_item_tittle {
+    width: 100%;
+}
+
+.course_documents {
+    padding: 1rem 0 0 0;
+}
+
+.course_documents_item {
+    margin: 0.3rem 0;
+    height: 2.5rem;
+    align-items: center;
+}
+
+.course_show_button {
+    display: flex;
+    justify-content: right;
+    margin-right: 2.5%;
+}
+
+/*Customize label of checkbox*/
+.course_show_label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*Hide browser's default checkbox*/
+.course_show_label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/*Custom checkbox*/
+.course_checkmark {
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+}
+
+/*Checkbox checked have a green background*/
+.course_show_label input:checked ~ .course_checkmark {
+    background-color: #2ed573;
+}
+
+/*Checkmark*/
+.course_checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/*Show checkmark when checked */
+.course_show_label input:checked ~ .course_checkmark:after {
+    display: block;
+}
+
+/* Style of checkmark */
+.course_show_label .course_checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid #dfe4ea;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

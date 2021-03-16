@@ -1,0 +1,66 @@
+/*For all: color */
+body {
+    background-color: #57606f;
+}
+
+#navigation_bar, #index_login, .course_type {
+    background-color: #2f3542;
+}
+
+body, a i, input {
+    color: #f1f2f6;
+}
+
+/*Individual color */
+nav {
+    border-top: solid #747d8c 1px;
+    border-bottom: solid #747d8c 1px;
+}
+
+a {
+    text-decoration: unset;
+    color: #dfe4ea;
+}
+
+button {
+    border-color: #747d8c;
+    background-color: #747d8c;
+    color: #dfe4ea;
+}
+
+.show_button, button i {
+    color: #57606f;
+}
+
+#index_login, .course_type {
+    box-shadow: #2f3542 0 0 1rem;
+}
+
+input {
+    background-color: #747d8c;
+    border: unset;
+}
+
+/*individual hover color */
+button:hover, .course_show_more:hover {
+    cursor: pointer;
+    border: solid #2ed573 2px;
+}
+
+#nav_logout_button:hover {
+    border: solid #ff6348 2px;
+}
+
+nav div a:hover {
+    cursor: pointer;
+    color: #2ed573;
+}
+
+/* Checkbox */
+.course_checkmark {
+    background-color: #eee;
+}
+
+.course_show_label:hover input ~ .course_checkmark {
+    background-color: #ccc;
+}
