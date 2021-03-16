@@ -2,6 +2,7 @@
 session_start();
 
 $root = $_SERVER['DOCUMENT_ROOT'];
+
 require_once $root . "/Classes/DB.php";
 require_once $root . "/Controller/ObjectController.php";
 require_once $root . "/Entity/Role.php";
