@@ -1,3 +1,6 @@
+<?php
+require_once "../require.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

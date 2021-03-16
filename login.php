@@ -1,13 +1,9 @@
 <?php
 require_once "require.php";
 
-if(isset($_POST['error'], $_POST['e-mail'], $_POST['password']) && $_POST['error'] === "0") {
-    $mail = json_decode(base64_decode($_POST['e-mail']));
-    $mail = strip_tags(trim($mail));
-    $password = base64_decode(json_decode($_POST['password']));
-    $password = strip_tags(trim($password));
-
-    checkPassword($mail, $password);
+if(isset($_GET['error'], $_POST['e-mail'], $_POST['password']) && $_GET['error'] === "0") {
+    $mail = strip_tags(trim($_POST['e-mail']));
+    $password = strip_tags(trim($_POST['password']));
 
     /**
      * Check if information of login is correct and creat a session for the user
@@ -18,7 +14,7 @@ if(isset($_POST['error'], $_POST['e-mail'], $_POST['password']) && $_POST['error
         $user = new UserController();
 
         if($user->logUser($mail)) {
-            if(password_verify($password, $user->logUser($mail)->getPassord())) {
+            if(password_verify($password, $user->logUser($mail)->getPassword())) {
                 $_SESSION['id'] = $user->logUser($mail)->getId();
                 $_SESSION['firstname'] = $user->logUser($mail)->getFirstname();
                 $_SESSION['lastname'] = $user->logUser($mail)->getLastname();
@@ -34,4 +30,6 @@ if(isset($_POST['error'], $_POST['e-mail'], $_POST['password']) && $_POST['error
             header('location: ./view/index.php?error=1');
         }
     }
+
+    checkPassword($mail, $password);
 }
