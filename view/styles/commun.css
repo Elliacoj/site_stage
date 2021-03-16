@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: Arial, sans-serif;
+}
+
+/*For all */
+header, #body_container, #page_container, #nav_logout_section button,
+.course_documents, .course_information,
+.course_documents_item{
+    width: 100%;
+}
+
+html, body, #body_container, #navigation_bar {
+    height: 100%;
+}
+
+#navigation_bar, #page_container, #index_login, #index_login input,
+.course_type {
+    padding: 1rem;
+}
+
+#nav_logout_section, #index_login label {
+    padding: 2rem 0;
+}
+
+#navigation_bar {
+    font-size: 1.3rem;
+}
+
+header {
+    font-size: 0.8rem;
+}
+
+#page_container, button {
+    font-size: 1rem;
+}
+
+button {
+    padding: 0.5rem 2rem;
+}
+
+/*For all: Flex */
+header, #body_container, #index_login label,
+.course_type, .course_information, .course_show_button,
+.course_documents_item {
+    display: flex;
+}
+
+/*Individual page elements */
+header {
+    height: 3rem;
+}
+
+/*nav elements */
+#navigation_bar {
+    width: 16rem;
+}
+
+#nav_welcome_message {
+    height: 4rem;
+}
+
+nav {
+    padding-bottom: 1rem;
+    height: auto;
+}
+
+nav div {
+    height: 3rem;
+    padding: 1rem 0;
+}
+
+#navigation_open {
+    height: 2rem;
+}
+
+nav i {
+    text-align: center;
+    width: 15%;
+}
+
+/* page elements */
+#page_container {
+    overflow: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#nav_theme_switch {
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+/* visibility */
+#navigation_open, #nav_logout_button,
+#nav_home_button, #nav_course_button, #nav_exercices_button {
+
+}

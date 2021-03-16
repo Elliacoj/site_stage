@@ -1,0 +1,19 @@
+#page_container {
+    justify-content: center;
+}
+
+#index_login {
+    text-align: center;
+    height: auto;
+    border-radius: 20px;
+    width: 40%;
+}
+
+#index_login label {
+    flex-direction: column;
+    text-align: left;
+}
+
+#index_login input {
+    margin: 1rem 0;
+}
