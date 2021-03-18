@@ -5,16 +5,19 @@ class Category
 {
     private ?int $id;
     private ?string $name;
+    private ?int $default_visibility;
 
     /**
      * Item constructor.
      * @param int|null $id
      * @param string|null $name
+     * @param int|null $default_visibility
      */
-    public function __construct(int $id = null, string $name = null)
+    public function __construct(int $id = null, string $name = null, int $default_visibility = null)
     {
         $this->id = $id;
         $this->name = $name;
+        $this->default_visibility = $default_visibility;
     }
 
     /**
@@ -44,5 +47,23 @@ class Category
         $this->name = $name;
         return $this;
     }
+    /**
+     * Return visibility
+     * @return int|null
+     */
+    public function getDefault_visibility(): ?int
+    {
+        return $this->default_visibility;
+    }
 
+    /**
+     * Set the visibility of Category
+     * @param int|null $default_visibility
+     * @return Document
+     */
+    public function setDefault_visibility(?int $default_visibility): Category
+    {
+        $this->default_visibility = $default_visibility;
+        return $this;
+    }
 }
