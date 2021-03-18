@@ -5,7 +5,7 @@ include './elements/header.php';
 
     <div id="admin_add_account">
         <h2>Ajouter un nouveau compte:</h2>
-        <form action="./create.php?table=user&error=0" method="POST" id="admin_create_user">
+        <form action="../create.php?table=user&error=0" method="POST" id="admin_create_user">
             <div>
                 <label for="firstname">Prénom: </label>
                 <input type="text" name="firstname" id="firstname" required>
@@ -45,26 +45,34 @@ include './elements/header.php';
         <div id="accounts_list_search">
             <div>Recherche:</div>
             <div>par rôle:
-                <select></select>
+                <select>
+                    <?php
+                    foreach ($roles as $item) {
+                    echo "<option value='" . $item->getId() . "'>" . $item->getName() . "</option>";
+                    }
+                    ?>
+                </select>
             </div>
         </div>
         <!-- Example de résultat -->
         <div id="accounts_results_screen">
             <!-- results exemple -->
-            <div class="accounts_results">
-                <div>Nom prénom</div>
-                <div>role</div>
-                <div class="account_options">
-                    <button class="accounts_modif">Modifier</button>
-                    <button class="account_delete">X</button>
-                </div>
-            </div>
+
             <!-- --- --->
             <?php
-                /*
-                 * foreach liste des comptes
-                */
+                $users = new UserController();
+                $users = $users->getUser();
+                foreach ($users as $user) {
             ?>
+                    <div class="accounts_results">
+                        <div><?= $user->getLastname() . " " . $user->getFirstname()?></div>
+                        <div><?= $user->getRole()?></div>
+                        <div class="account_options">
+                            <button class="accounts_modif">Modifier</button>
+                            <button class="account_delete">X</button>
+                        </div>
+                    </div>
+            <?php } ?>
 
         </div>
 

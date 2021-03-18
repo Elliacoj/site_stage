@@ -38,20 +38,20 @@ foreach($categories as $category) {
                 $checkDoc = "checked";
             }
 
-            if(((isset($_SESSION['role']) && $_SESSION['role'] !== "administrateur") && $check === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] === "administrateur")) {
+            if(((isset($_SESSION['role']) && $_SESSION['role'] !== "administrateur") && $checkDoc === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] === "administrateur")) {
                 if(($document->getCategory() === $category->getName()) && ($document->getItem() === "slide")) {
-
-
         ?>
         <div class="section_documents">
             <div class="section_documents_item">
                 <div class="section_documents_item_tittle"><?= $document->getTitle()?></div>
                 <div class="section_show_button">
                     <button><i class="fas fa-file-download"></i></button>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                     <label class="section_show_label">
                         <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
                         <span class="section_checkmark"></span>
                     </label>
+                    <?php } ?>
                 </div>
              </div>
         </div>

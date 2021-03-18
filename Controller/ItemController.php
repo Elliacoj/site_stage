@@ -33,6 +33,6 @@ class ItemController
      * @param $id
      */
     public function deleteItem($id) {
-        ObjectController::delete("DELETE FROM item WHERE id = $id)");
+        ObjectController::delete("DELETE FROM item WHERE id = $id");
     }
 }

@@ -33,6 +33,6 @@ class RoleController
      * @param $id
      */
     public function deleteRole($id) {
-        ObjectController::delete("DELETE FROM role WHERE id = $id)");
+        ObjectController::delete("DELETE FROM role WHERE id = $id");
     }
 }

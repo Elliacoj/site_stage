@@ -4,7 +4,8 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0) {
     if(isset($_POST['mail'])) {
         $search = new UserController();
         if($search->logUser($_POST['mail'])) {
-            header("location: formulaire_inscription.php?error=2");
+            // adresse mail existante
+            header("location: ./view/administration.php?error=2");
         }
     }
 
@@ -23,10 +24,12 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0) {
 
     $state = $newUser->addUser($checkData);
     if($state) {
-        header("location: formulaire_inscription.php?error=0");
+        // utilisateur bien enregistré
+        header("location: ./view/administration.php?error=0");
     }
     else {
-        header("location: formulaire_inscription.php?error=1");
+        // erreur dans l'enregistrement
+        header("location: ./view/administration.php?error=1");
     }
 }
 

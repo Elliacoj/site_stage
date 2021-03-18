@@ -23,7 +23,7 @@ class UserController
      * @param $id
      */
     public function deleteUser($id) {
-        ObjectController::delete("DELETE FROM user WHERE id = $id)");
+        ObjectController::delete("DELETE FROM user WHERE id = $id");
     }
 
     public function logUser($mail): object {

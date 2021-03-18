@@ -56,6 +56,12 @@
         animation-fill-mode: both;
         animation-duration: 1.5s;
     }
+
+    #confirm {
+        width: 100% !important;
+        left: 0 !important;
+        top: 15% !important;
+    }
 }
 
 
