@@ -1,8 +1,7 @@
 let checkBox = $('.show_button');
 
 checkBox.click(function () {
-    let name = $(this).parent().parent().parent().first().text();
-
+    let id = $(this).val();
     let check = 0;
     if($(this).prop("checked")) {
         check = 1;
@@ -11,7 +10,7 @@ checkBox.click(function () {
     $.ajax({
         type: "POST",
         url: '../update.php',
-        data: "nameTitle=" + name + "&checkValue=" + check,
+        data: "checkId=" + id + "&checkValue=" + check,
         dataType: "html"
     });
 })
