@@ -24,15 +24,15 @@ $('#navigation_open').click(() => {
         nav_open_icon.style.animationName = 'anim_nav_close';
 
         navigation_bar.style.animationName = 'anim_nav_hidden';
+        setTimeout(function () {
+            nav.style.visibility = 'hidden';
+            nav_logout.style.visibility = 'hidden';
 
-        nav.style.visibility = 'hidden';
-        nav_logout.style.visibility = 'hidden';
+            nav.style.display = 'none';
+            nav_logout.style.display = 'none';
 
-        nav.style.display = 'none';
-        nav_logout.style.display = 'none';
-
-        navigation_status = false;
-
+            navigation_status = false;
+            navigation_bar.style.animationName = 'anim_nav_end';
+        }, 1500);
     }
-
 })
