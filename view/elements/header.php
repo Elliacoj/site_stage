@@ -10,6 +10,7 @@ require_once "../require.php";
     <script src="https://kit.fontawesome.com/f8e4a7ab95.js" crossorigin="anonymous"></script>
     <link href="./styles/commun.css" rel="stylesheet">
     <link id="pages_style" href="./styles/light.css" rel="stylesheet">
+    <link href="./styles/mobile_version.css" rel="stylesheet">
 </head>
 
 <body>
