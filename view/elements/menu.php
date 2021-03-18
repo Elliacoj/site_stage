@@ -35,10 +35,10 @@
             <a href="./evaluations.php"><i class="fas fa-laptop-code"></i> Evaluations</a>
         </div>
 <?php
-        if (isset($_SESSION['role']) === 'administrateur') {
+        if (isset($_SESSION['role']) && $_SESSION['role'] === 'administrateur') {
 ?>
         <div id="nav_administration_button">
-            <a href="./administration.php"><i class="fas fa-laptop-code"> Administration</a>
+            <a href="./administration.php"><i class="fas fa-laptop-code"></i> Administration</a>
         </div>
 <?php
         }

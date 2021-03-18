@@ -26,13 +26,11 @@ include './elements/header.php';
                 <label for="role">Role: </label>
                 <select name="role" id="role" required>
                     <?php
-                    /*
                     $role = new RoleController();
                     $roles = $role->getRole();
                     foreach ($roles as $item) {
                         echo "<option value='" . $item->getId() . "'>" . $item->getName() . "</option>";
                     }
-                    */
                     ?>
                 </select>
             </div>
