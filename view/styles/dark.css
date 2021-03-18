@@ -3,12 +3,12 @@ body {
     background-color: #57606f;
 }
 
-#navigation_bar, #index_login, .course_type {
+#navigation_bar, #index_login, .section_type {
     background-color: #2f3542;
 }
 
 body, a i, input {
-    color: #f1f2f6;
+    color: #dfe4ea;
 }
 
 /*Individual color */
@@ -32,7 +32,7 @@ button {
     color: #57606f;
 }
 
-#index_login, .course_type {
+#index_login, .section_type {
     box-shadow: #2f3542 0 0 1rem;
 }
 
@@ -42,7 +42,7 @@ input {
 }
 
 /*individual hover color */
-button:hover, .course_show_more:hover {
+button:hover, .section_show_more:hover {
     cursor: pointer;
     border: solid #2ed573 2px;
 }
@@ -57,10 +57,10 @@ nav div a:hover {
 }
 
 /* Checkbox */
-.course_checkmark {
+.section_checkmark {
     background-color: #eee;
 }
 
-.course_show_label:hover input ~ .course_checkmark {
+.section_show_label:hover input ~ .section_checkmark {
     background-color: #ccc;
 }

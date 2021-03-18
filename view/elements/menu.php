@@ -4,13 +4,21 @@
     </header>
 
     <div id="navigation_open"><i class="fas fa-bars"></i></div>
-    <div id="nav_welcome_message"></div>
-    <div id="nav_information_message"></div>
 
-    <nav>
+<?php
+    if (isset($_SESSION['role'])) {
+?>
+    <div id="nav_welcome_message">Bonjour Nom prénom!</div>
+<?php
+    }
+?>
+    <nav id="nav_mobile">
         <div id="nav_theme_switch">
             <i class="fas fa-adjust"></i> Mode <span id="theme_app_text">sombre</span>
         </div>
+<?php
+    if (isset($_SESSION['role'])) {
+?>
         <div id="nav_home_button">
             <a href="./home.php"><i class="fas fa-house-user"></i> Home</a>
         </div>
@@ -26,10 +34,18 @@
         <div id="nav_evaluations_button">
             <a href="./evaluations.php"><i class="fas fa-laptop-code"></i> Evaluations</a>
         </div>
+<?php
+    }
+?>
     </nav>
-
-    <!-- TEMPORAIRE ramène a l'index pour visuel / NORMALEMENT ramène a l'index quand Logout! <a> a Supp! -->
-    <div id="nav_logout_section"><button id='nav_logout_button'>Logout</button></div>
-
+    <div id="nav_logout_section">
+<?php
+    if (isset($_SESSION['role'])) {
+?>
+        <button id='nav_logout_button'>Logout</button>
+<?php
+    }
+?>
+    </div>
 </div>
 <div id="page_container">

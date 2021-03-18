@@ -1,0 +1,88 @@
+/* 800px width */
+@media screen and (max-width: 1000px){
+    #index_login {
+        width: 100%;
+    }
+
+    .section_type {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #body_container {
+        display: block;
+    }
+
+    #navigation_bar {
+        position: absolute;
+        animation-fill-mode: both;
+        animation-duration: 1.5s;
+        width: 100%;
+        height: auto;
+    }
+
+    header {
+        height: 1.5rem;
+    }
+
+    nav {
+        margin-top: 4%;
+    }
+
+    #page_container {
+        padding-top: 5rem;
+    }
+
+    #nav_welcome_message, nav, #nav_logout_section {
+        visibility: hidden;
+        display: none;
+    }
+
+    #navigation_open {
+        animation-fill-mode: both;
+        animation-duration: 1.5s;
+        padding: 1%;
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        visibility: visible;
+        right: 0;
+        top: 0;
+    }
+
+    #navigation_open i {
+        font-size: 3rem;
+    }
+
+    #nav_mobile {
+        animation-fill-mode: both;
+        animation-duration: 1.5s;
+    }
+}
+
+
+/* Animation */
+@keyframes anim_nav_open {
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes anim_nav_close {
+    from {
+        transform: rotate(90deg);
+    }
+    to {
+        transform: rotate(0);
+    }
+}
+
+@keyframes anim_nav {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

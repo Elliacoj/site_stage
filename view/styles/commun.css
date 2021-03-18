@@ -11,8 +11,8 @@ body {
 
 /*For all */
 header, #body_container, #page_container, #nav_logout_section button,
-.course_documents, .course_information,
-.course_documents_item{
+.section_documents, .section_information,
+.section_documents_item{
     width: 100%;
 }
 
@@ -20,13 +20,17 @@ html, body, #body_container, #navigation_bar {
     height: 100%;
 }
 
-#navigation_bar, #page_container, #index_login, #index_login input,
-.course_type {
+#navigation_bar, #page_container, #index_login,
+.section_type {
     padding: 1rem;
 }
 
 #nav_logout_section, #index_login label {
     padding: 2rem 0;
+}
+
+#index_login input {
+    padding: 1rem 0.5rem;
 }
 
 #navigation_bar {
@@ -47,8 +51,8 @@ button {
 
 /*For all: Flex */
 header, #body_container, #index_login label,
-.course_type, .course_information, .course_show_button,
-.course_documents_item {
+.section_type, .section_information, .section_show_button,
+.section_documents_item {
     display: flex;
 }
 
@@ -63,7 +67,8 @@ header {
 }
 
 #nav_welcome_message {
-    height: 4rem;
+    height: 2rem;
+    font-size: 1rem;
 }
 
 nav {
@@ -102,4 +107,8 @@ nav i {
 #navigation_open, #nav_logout_button,
 #nav_home_button, #nav_course_button, #nav_exercices_button {
 
+}
+
+#navigation_open {
+    visibility: hidden;
 }

@@ -1,3 +1,9 @@
+@media screen and (min-width: 1000px) {
+    #index_login {
+        width: 50%;
+    }
+}
+
 #page_container {
     justify-content: center;
 }
@@ -6,7 +12,6 @@
     text-align: center;
     height: auto;
     border-radius: 20px;
-    width: 40%;
 }
 
 #index_login label {

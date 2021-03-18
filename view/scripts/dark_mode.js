@@ -3,9 +3,10 @@ let style = document.getElementById('pages_style');
 let app_theme_check = localStorage.getItem('app_theme');
 
 if (app_theme_check === null) {
-    localStorage.setItem('app-theme', 'light');
+    localStorage.setItem('app_theme', 'light');
+}
 
-} else if (app_theme_check === 'dark'){
+if (app_theme_check === 'dark'){
     style.href = './styles/dark.css';
 
 } else if (app_theme_check === 'light'){
@@ -13,10 +14,8 @@ if (app_theme_check === null) {
 }
 
 // Dark mode:
-
-$('#nav_theme_switch').click(function (){
+$('#nav_theme_switch').click(() => {
     let app_theme = localStorage.getItem('app_theme');
-
     if (app_theme === 'dark') {
         localStorage.setItem('app_theme', 'light');
         style.href = "./styles/light.css";
@@ -26,5 +25,4 @@ $('#nav_theme_switch').click(function (){
         style.href = "./styles/dark.css";
 
     }
-
 })
