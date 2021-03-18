@@ -35,6 +35,12 @@ class CategoryController
         ObjectController::delete("DELETE FROM category WHERE id = $id");
     }
 
+    /**
+     * Update a category in table category
+     * @param $title
+     * @param $value
+     * @param $id
+     */
     public function updateCategory($title, $value, $id) {
         ObjectController::update("UPDATE category SET $title = '$value' WHERE id = '$id'");
     }
