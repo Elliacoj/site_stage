@@ -1,0 +1,36 @@
+#admin_accounts_list, #admin_add_account, #accounts_list_search, #accounts_results_screen {
+    width: 100%;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+#admin_add_account, #accounts_list_search, #accounts_results_screen {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: solid #2f3542 1px;
+}
+
+.accounts_results {
+    padding: 0.5rem 0;
+}
+
+#accounts_list_search, .accounts_results, #admin_add_account form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#accounts_list_search div, .accounts_results div {
+    width: 33.33%;
+}
+
+#admin_add_account form div {
+    width: 20%;
+}
+
+.account_options {
+    display: flex;
+    justify-content: flex-end;
+}

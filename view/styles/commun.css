@@ -9,10 +9,9 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/*For all */
+/*For all: 100% */
 header, #body_container, #page_container, #nav_logout_section button,
-.section_documents, .section_information,
-.section_documents_item{
+.section_documents, .section_information, .section_documents_item{
     width: 100%;
 }
 
@@ -20,6 +19,14 @@ html, body, #body_container, #navigation_bar {
     height: 100%;
 }
 
+/*For all: FLEX */
+header, #body_container, #index_login label,
+.section_type, .section_information, .section_show_button,
+.section_documents_item {
+    display: flex;
+}
+
+/* For all: PADDING */
 #navigation_bar, #page_container, #index_login,
 .section_type {
     padding: 1rem;
@@ -33,7 +40,12 @@ html, body, #body_container, #navigation_bar {
     padding: 1rem 0.5rem;
 }
 
-#navigation_bar {
+button {
+    padding: 0.5rem 2rem;
+}
+
+/* For all: FONT-SIZE */
+#navigation_bar, #nav_welcome_message {
     font-size: 1.3rem;
 }
 
@@ -45,18 +57,7 @@ header {
     font-size: 1rem;
 }
 
-button {
-    padding: 0.5rem 2rem;
-}
-
-/*For all: Flex */
-header, #body_container, #index_login label,
-.section_type, .section_information, .section_show_button,
-.section_documents_item {
-    display: flex;
-}
-
-/*Individual page elements */
+/* Individual page elements */
 header {
     height: 3rem;
 }
@@ -68,7 +69,6 @@ header {
 
 #nav_welcome_message {
     height: 2rem;
-    font-size: 1rem;
 }
 
 nav {
@@ -103,12 +103,11 @@ nav i {
     margin-bottom: 1rem;
 }
 
-/* visibility */
-#navigation_open, #nav_logout_button,
-#nav_home_button, #nav_course_button, #nav_exercices_button {
-
+#nav_administration_button {
+    margin-top: 1rem;
 }
 
+/* visibility */
 #navigation_open {
     visibility: hidden;
 }

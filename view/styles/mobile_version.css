@@ -1,20 +1,17 @@
 /* 800px width */
 @media screen and (max-width: 1000px){
-    #index_login {
-        width: 100%;
-    }
-
-    .section_type {
+    #index_login, .section_type {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 700px){
-    #body_container {
+    #body_container{
         display: block;
     }
 
     #navigation_bar {
+        z-index: 4;
         position: absolute;
         animation-fill-mode: both;
         animation-duration: 1.5s;
