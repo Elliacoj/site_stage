@@ -1,5 +1,6 @@
 <?php
-require_once "../require.php";
+
+require_once $_SERVER['DOCUMENT_ROOT'] . "/require.php";
 ?>
 <!DOCTYPE html>
 <html lang="fr">

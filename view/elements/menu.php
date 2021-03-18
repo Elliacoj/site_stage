@@ -42,7 +42,7 @@
 <?php
     if (isset($_SESSION['role'])) {
 ?>
-        <button id='nav_logout_button'>Logout</button>
+        <a href="<?= $rootHtml ?>/logout.php"><button id='nav_logout_button'>Logout</button></a>
 <?php
     }
 ?>

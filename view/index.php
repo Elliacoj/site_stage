@@ -1,5 +1,8 @@
 <?php
     include './elements/header.php';
+    if(isset($_SESSION['id'], $_SESSION['mail'])) {
+        header("location: ./home.php");
+    }
 ?>
 <link href="./styles/index_style.css" rel="stylesheet">
 
