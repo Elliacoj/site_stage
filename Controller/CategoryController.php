@@ -32,6 +32,10 @@ class CategoryController
      * @param $id
      */
     public function deleteCategory($id) {
-        ObjectController::delete("DELETE FROM category WHERE id = $id)");
+        ObjectController::delete("DELETE FROM category WHERE id = $id");
+    }
+
+    public function updateCategory($title, $value, $data) {
+        ObjectController::update("UPDATE category SET $title = '$value' WHERE name = '$data'");
     }
 }

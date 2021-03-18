@@ -108,4 +108,13 @@ class ObjectController {
         $stmt = DB::getInstance()->prepare($sql);
         $stmt->execute();
     }
+
+    /**
+     * Update a data in table
+     * @param $sql
+     */
+    public static function update($sql) {
+        $stmt = DB::getInstance()->prepare($sql);
+        $stmt->execute();
+    }
 }
