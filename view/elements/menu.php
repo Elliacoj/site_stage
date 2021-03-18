@@ -8,7 +8,7 @@
 <?php
     if (isset($_SESSION['role'])) {
 ?>
-    <div id="nav_welcome_message">Bonjour Nom prénom!</div>
+    <div id="nav_welcome_message">Bonjour <?=  $_SESSION['firstname'] . ' ' . $_SESSION['lastname'];?>!</div>
 <?php
     }
 ?>
