@@ -47,13 +47,17 @@ button:hover, .section_show_more:hover {
     border: solid #2ed573 2px;
 }
 
-#nav_logout_button:hover {
+#nav_logout_button:hover, .account_delete:hover {
     border: solid #ff6348 2px;
 }
 
 nav div a:hover {
     cursor: pointer;
     color: #2ed573;
+}
+
+.accounts_results:hover {
+    background-color: #2f3542 ;
 }
 
 /* Checkbox */
