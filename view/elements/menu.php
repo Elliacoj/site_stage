@@ -32,13 +32,13 @@
             <a href="./projects.php"><i class="fas fa-laptop-code"></i> Projects</a>
         </div>
         <div id="nav_evaluations_button">
-            <a href="./evaluations.php"><i class="fas fa-laptop-code"></i> Evaluations</a>
+            <a href="./evaluations.php"><i class="fas fa-code"></i> Evaluations</a>
         </div>
 <?php
         if (isset($_SESSION['role']) && $_SESSION['role'] === 'administrateur') {
 ?>
         <div id="nav_administration_button">
-            <a href="./administration.php"><i class="fas fa-laptop-code"></i> Administration</a>
+            <a href="./administration.php"><i class="fas fa-tools"></i> Administration</a>
         </div>
 <?php
         }
