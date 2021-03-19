@@ -2,6 +2,19 @@
 include './elements/header.php';
 ?>
     <link href="./styles/admin_page.css" rel="stylesheet">
+<?php
+    if (isset($_GET['error'])){
+        if ($_GET['error'] === '0'){
+            echo '<div id="error_no_problem">La base de donnée à étais mise à jour!</div>';
+        }
+        else if ($_GET['error'] === '1'){
+            echo '<div id="error_problem">Un problème est survenus!</div>';
+        }
+        else if ($_GET['error'] === '2'){
+            echo '<div id="error_problem_mail">Adresse mail déjà utilisée!</div>';
+        }
+    }
+?>
 
     <div id="admin_add_account">
         <h2>Ajouter un nouveau compte:</h2>
