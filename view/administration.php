@@ -81,7 +81,7 @@ include './elements/header.php';
                         <div><?= $user->getLastname() . " " . $user->getFirstname()?></div>
                         <div><?= $user->getRole()?></div>
                         <div class="account_options">
-                            <button class="accounts_modif">Modifier</button>
+                            <a href="administration.php?userModif=<?= $user->getMail()?>"><button class="accounts_modif">Modifier</button></a>
                             <button class="account_delete" value="<?= $user->getId()?>">X</button>
                         </div>
                     </div>
@@ -93,5 +93,6 @@ include './elements/header.php';
 
 
 <?php
+include "./modaleWindow.php";
 include "./elements/footer.php";
 ?>

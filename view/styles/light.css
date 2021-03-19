@@ -61,6 +61,6 @@ nav div a:hover {
     background-color: #ccc;
 }
 
-#confirm {
+#confirm, #modaleUser {
     background-color: white;
 }

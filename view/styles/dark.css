@@ -25,7 +25,7 @@ a {
     color: #dfe4ea;
 }
 
-button {
+button, .cancel {
     border-color: #747d8c;
     background-color: #747d8c;
     color: #dfe4ea;
@@ -45,7 +45,7 @@ input {
 }
 
 /*Hover color */
-button:hover {
+button:hover, .cancel:hover {
     border: solid #2ed573 2px;
 }
 
@@ -70,6 +70,6 @@ nav div a:hover {
     background-color: #ccc;
 }
 
-#confirm {
+#confirm, #modaleUser {
     background-color: #2f3542 !important;
 }

@@ -40,7 +40,7 @@ header, #body_container, #index_login label,
     padding: 1rem 0.5rem;
 }
 
-button {
+button, .cancel {
     padding: 0.5rem 2rem;
 }
 
@@ -53,7 +53,7 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button {
+#page_container, button, .cancel {
     font-size: 1rem;
 }
 
@@ -112,11 +112,29 @@ nav i {
 }
 
 /* Pointer */
-nav div a:hover, button:hover, .section_show_more{
+nav div a:hover, button:hover, .section_show_more, .cancel:hover{
     cursor: pointer;
 }
 
 /* visibility */
 #navigation_open {
     visibility: hidden;
+}
+
+#modaleUser {
+    width: 40%;
+    height: auto;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    box-shadow: 2px 2px 9px darkgray;
+    border-radius: 3px;
+}
+
+#modaleUser form {
+    margin: 1%;
 }

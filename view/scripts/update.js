@@ -2,6 +2,7 @@ let checkBox = $('.show_button');
 let buttonList = $('.section_show_more');
 let buttonDelete = $('.account_delete');
 let buttonLink = $('.linkDoc');
+let buttonModif = $('.accounts_modif');
 
 $('.section_documents').each(function() {
     $(this).hide();
@@ -38,10 +39,10 @@ buttonList.click(function () {
 
 // Create a window for confirm delete user
 function confirmWindow(id) {
-    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "'><button>Confirmer</button></a><a href=''><button id='cancel'>Annuler</button></a></div>");
+    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "'><button>Confirmer</button></a><a href=''><button id='cancelUser'>Annuler</button></a></div>");
     let div = $('#confirm');
     let subDiv = $('#textConfirm');
-    let cancel = $('#cancel');
+    let cancel = $('#cancelUser');
 
     div.css({
         width: "40%",
@@ -89,4 +90,8 @@ buttonLink.click(function () {
         link = "../file/" + type + "/" + link;
         $(this).attr("href", link);
     }
+})
+
+buttonModif.click(function () {
+
 })
