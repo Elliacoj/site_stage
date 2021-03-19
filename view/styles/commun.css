@@ -68,7 +68,7 @@ header {
 }
 
 #nav_welcome_message {
-    height: 2rem;
+    min-height: 3rem;
 }
 
 nav {
