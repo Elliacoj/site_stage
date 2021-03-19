@@ -17,14 +17,6 @@ foreach($categories as $category) {
         <div class="section_type">
             <div class="section_information">
                 <div class="section_tittle"><?= $category->getName()?></div>
-                <div class="section_show_button">
-                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
-                        <label class="section_show_label">
-                            <input type="checkbox" class="show_button" value="<?= $category->getId()?>" <?= $check?>>
-                            <span class="section_checkmark"></span>
-                        </label>
-                    <?php } ?>
-                </div>
             </div>
             <div>
                 <button class="section_show_more">Voir +</button>
