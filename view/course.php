@@ -17,7 +17,9 @@ foreach($categories as $category) {
 
     <div class="section_type">
         <div class="section_information">
-            <div class="section_tittle"><?= $category->getName()?><button class="section_show_more"><i class="fas fa-plus-square"></i></button></div>
+            <div class="section_tittle"><?= $category->getName()?>
+                <button class="section_show_more"><i class="fas fa-plus-square"></i></button>
+            </div>
             <div class="section_show_button">
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                 <label class="section_show_label">
@@ -40,7 +42,7 @@ foreach($categories as $category) {
         ?>
         <div class="section_documents">
             <div class="section_documents_item">
-                <div class="section_documents_item_tittle"><?= $document->getTitle()?></div>
+                <div class="section_documents_item_tittle"><a href="../file/cours/<?=$document->getLink()?>" target="_blank"><?= $document->getTitle()?></a></div>
                 <div class="section_show_button">
                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                     <label class="section_show_label">

@@ -32,7 +32,7 @@ checkBox.click(function () {
 
 // Function for switch the display
 buttonList.click(function () {
-    $(this).parent().parent().find('.section_documents').toggle();
+    $(this).parent().parent().parent().find('.section_documents').toggle();
 })
 
 // Create a window for confirm delete user
