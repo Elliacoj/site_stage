@@ -79,7 +79,7 @@ buttonDelete.click(function () {
 });
 
 buttonUpload.click(function() {
-    let file = "/file/projet/" + $(this).attr("name");
+    let file = $(this).attr("name");
 
     $.ajax({
         type: "POST",
