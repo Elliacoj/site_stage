@@ -34,3 +34,8 @@ h2 {
     display: flex;
     justify-content: flex-end;
 }
+
+#admin_add_account form input {
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+}

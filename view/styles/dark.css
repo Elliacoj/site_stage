@@ -7,7 +7,7 @@ body {
     background-color: #2f3542;
 }
 
-body, a i, input {
+body, a i, input, .section_show_more i {
     color: #dfe4ea;
 }
 
@@ -41,9 +41,8 @@ input {
     border: unset;
 }
 
-/*individual hover color */
-button:hover, .section_show_more:hover {
-    cursor: pointer;
+/*Hover color */
+button:hover {
     border: solid #2ed573 2px;
 }
 
@@ -52,7 +51,6 @@ button:hover, .section_show_more:hover {
 }
 
 nav div a:hover {
-    cursor: pointer;
     color: #2ed573;
 }
 

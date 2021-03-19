@@ -33,6 +33,11 @@
     align-items: center;
 }
 
+.section_show_more, .section_show_more:hover {
+    background-color: unset;
+    border: unset;
+}
+
 .section_show_button {
     display: flex;
     justify-content: right;

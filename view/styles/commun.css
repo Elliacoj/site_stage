@@ -45,7 +45,7 @@ button {
 }
 
 /* For all: FONT-SIZE */
-#navigation_bar, #nav_welcome_message {
+#navigation_bar, #nav_welcome_message, .section_show_more {
     font-size: 1.3rem;
 }
 
@@ -105,6 +105,11 @@ nav i {
 
 #nav_administration_button {
     margin-top: 1rem;
+}
+
+/* Pointer */
+nav div a:hover, button:hover, .section_show_more{
+    cursor: pointer;
 }
 
 /* visibility */
