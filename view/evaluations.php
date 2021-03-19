@@ -19,7 +19,7 @@ foreach($categories as $category) {
                 <div class="section_tittle"><?= $category->getName()?></div>
             </div>
             <div>
-                <button class="section_show_more">Voir +</button>
+                <button class="section_show_more"><i class="fas fa-plus-square"></i></button>
             </div>
 
             <?php

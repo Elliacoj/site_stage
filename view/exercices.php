@@ -19,7 +19,7 @@ foreach($categories as $category) {
                 <div class="section_tittle"><?= $category->getName()?></div>
             </div>
             <div>
-                <button class="section_show_more">Voir +</button>
+                <button class="section_show_more"><i class="fas fa-plus-square"></i></button>
             </div>
 
             <?php
@@ -34,9 +34,8 @@ foreach($categories as $category) {
                         ?>
                         <div class="section_documents">
                             <div class="section_documents_item">
-                                <div class="section_documents_item_tittle"><?= $document->getTitle()?></div>
+                                <div class="section_documents_item_tittle"><a href="<?= $document->getLink()?>" target="_blank"><i class="fab fa-github"></i> <?= $document->getTitle()?></a></div>
                                 <div class="section_show_button">
-                                    <button><i class="fas fa-file-download"></i></button>
                                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                                         <label class="section_show_label">
                                             <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
