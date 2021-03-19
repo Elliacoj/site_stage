@@ -69,7 +69,7 @@ include './elements/header.php';
                         <div><?= $user->getRole()?></div>
                         <div class="account_options">
                             <button class="accounts_modif">Modifier</button>
-                            <button class="account_delete">X</button>
+                            <button class="account_delete" value="<?= $user->getId()?>">X</button>
                         </div>
                     </div>
             <?php } ?>

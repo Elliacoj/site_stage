@@ -6,6 +6,7 @@ $('.section_documents').each(function() {
     $(this).hide();
 });
 
+// Function for send in php check for checkbox
 checkBox.click(function () {
     let id = $(this).val();
     let check = 0;
@@ -29,13 +30,14 @@ checkBox.click(function () {
     });
 })
 
+// Function for switch the display
 buttonList.click(function () {
     $(this).parent().parent().find('.section_documents').toggle();
 })
 
-
-function confirmWindow() {
-    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php'><button>Confirmer</button></a><a href=''><button id='cancel'>Annuler</button></a></div>");
+// Create a window for confirm delete user
+function confirmWindow(id) {
+    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "'><button>Confirmer</button></a><a href=''><button id='cancel'>Annuler</button></a></div>");
     let div = $('#confirm');
     let subDiv = $('#textConfirm');
     let cancel = $('#cancel');
@@ -72,5 +74,6 @@ function confirmWindow() {
 }
 
 buttonDelete.click(function () {
-    confirmWindow();
+    confirmWindow($(this).val());
 });
+
