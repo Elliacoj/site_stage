@@ -15,7 +15,7 @@ body, a i, .section_show_more i {
     color: #57606f;
 }
 
-#nav_logout_button:hover, .account_delete:hover {
+#nav_logout_button:hover, .account_delete:hover, .button_delete:hover {
     border: solid #ff4757 3px;
 }
 

@@ -112,7 +112,7 @@ nav i {
 }
 
 /* Pointer */
-nav div a:hover, button:hover, .section_show_more, .cancel:hover{
+nav div a:hover, button:hover, .section_show_more, .cancel:hover, .section_option i{
     cursor: pointer;
 }
 
