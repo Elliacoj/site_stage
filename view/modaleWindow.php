@@ -39,7 +39,7 @@ if(isset($_GET['userModif'])) {
         <div class="account_options">
             <div>
                 <button type="submit">Confirmer</button>
-                <a href='administration.php' class="cancel">Annuler</a>
+                <a href='administration.php'><button type="button" class="button_delete">Annuler</button></a>
             </div>
         </div>
     </form>
