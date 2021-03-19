@@ -7,11 +7,14 @@ body {
     background-color: #f1f2f6;
 }
 
+#navigation_bar {
+    border-right: solid #2ed573 6px;
+}
+
 body, a i, .section_show_more i {
     color: #57606f;
 }
 
-/*Individual color */
 #nav_logout_button:hover, .account_delete:hover {
     border: solid #ff4757 3px;
 }
