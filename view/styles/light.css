@@ -7,19 +7,13 @@ body {
     background-color: #f1f2f6;
 }
 
-body, a i {
+body, a i, .section_show_more i {
     color: #57606f;
 }
 
 /*Individual color */
 #nav_logout_button:hover, .account_delete:hover {
     border: solid #ff4757 3px;
-}
-
-button:hover, .section_show_more:hover {
-    cursor: pointer;
-    color: #57606f;
-    border: solid #2ed573 3px;
 }
 
 nav {
@@ -40,9 +34,13 @@ a, button {
     box-shadow: #57606f 0 0 1rem;
 }
 
-/*individual hover color */
+/*Hover color */
+button:hover {
+    color: #57606f;
+    border: solid #2ed573 3px;
+}
+
 nav div a:hover {
-    cursor: pointer;
     color: #2ed573;
 }
 

@@ -22,3 +22,7 @@
 #index_login input {
     margin: 1rem 0;
 }
+
+#index_login button {
+    padding: 0.5rem 3rem;
+}

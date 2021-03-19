@@ -54,11 +54,7 @@ include './elements/header.php';
                 </select>
             </div>
         </div>
-        <!-- Example de résultat -->
         <div id="accounts_results_screen">
-            <!-- results exemple -->
-
-            <!-- --- --->
             <?php
                 $users = new UserController();
                 $users = $users->getUser();
