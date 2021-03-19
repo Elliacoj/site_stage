@@ -49,7 +49,7 @@ button:hover, .cancel:hover {
     border: solid #2ed573 2px;
 }
 
-#nav_logout_button:hover, .account_delete:hover {
+#nav_logout_button:hover, .account_delete:hover, .button_delete:hover {
     border: solid #ff6348 2px;
 }
 
