@@ -16,10 +16,9 @@ foreach($categories as $category) {
 
         <div class="section_type">
             <div class="section_information">
-                <div class="section_tittle"><?= $category->getName()?></div>
-            </div>
-            <div>
-                <button class="section_show_more"><i class="fas fa-plus-square"></i></button>
+                <div class="section_tittle"><?= $category->getName()?>
+                    <button class="section_show_more"><i class="fas fa-plus-square"></i></button>
+                </div>
             </div>
 
             <?php
