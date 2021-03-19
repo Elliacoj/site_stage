@@ -51,11 +51,11 @@ function confirmWindow(id) {
         position: "absolute",
         top: "10%",
         left: "30%",
-        border: "1px solid black",
+        border: "4px solid #ff6348",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-evenly",
-        boxShadow: "2px 2px 9px darkgray",
+        boxShadow: "0 0 1rem #ff6348",
         borderRadius: "3px"
     });
 
