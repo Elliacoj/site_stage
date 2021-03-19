@@ -44,6 +44,15 @@
     margin-right: 2.5%;
 }
 
+.section_show_button button {
+    margin-right: 1rem;
+}
+
+.section_option {
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
 /*Customize label of checkbox*/
 .section_show_label {
     display: block;
