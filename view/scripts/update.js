@@ -1,6 +1,7 @@
 let checkBox = $('.show_button');
 let buttonList = $('.section_show_more');
 let buttonDelete = $('.account_delete');
+let buttonLink = $('.linkDoc');
 
 $('.section_documents').each(function() {
     $(this).hide();
@@ -77,3 +78,15 @@ buttonDelete.click(function () {
     confirmWindow($(this).val());
 });
 
+buttonLink.click(function () {
+    let link = $(this).attr("data-href");
+
+    if(link.includes("https")) {
+        $(this).attr("href", link);
+    }
+    else {
+        let type = $(this).attr("data-type");
+        link = "../file/" + type + "/" + link;
+        $(this).attr("href", link);
+    }
+})

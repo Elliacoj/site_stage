@@ -33,7 +33,7 @@ foreach($categories as $category) {
                         ?>
                         <div class="section_documents">
                             <div class="section_documents_item">
-                                <div class="section_documents_item_tittle"><a href="../file/projet/<?=$document->getLink()?>" target="_blank"><?= $document->getTitle()?></a></div>
+                                <div class="section_documents_item_tittle"><a class="linkDoc" href="" data-href="<?= $document->getLink()?>" data-type="projet" target="_blank"><?= $document->getTitle()?></a></div>
                                 <div class="section_show_button">
                                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                                         <label class="section_show_label">
