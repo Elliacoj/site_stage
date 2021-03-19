@@ -3,15 +3,19 @@ body {
     background-color: #57606f;
 }
 
-#navigation_bar, #index_login, .section_type {
+#navigation_bar, #index_login, .section_type, .show_button, button i, .accounts_results:hover {
     background-color: #2f3542;
+}
+
+input, button, .cancel {
+    background-color: #747d8c;
 }
 
 #navigation_bar {
     border-right: solid #2ed573 6px;
 }
 
-body, a i, input, .section_show_more i {
+body, a, a i, input, .section_show_more i, button, .cancel {
     color: #dfe4ea;
 }
 
@@ -22,17 +26,10 @@ nav {
 
 a {
     text-decoration: unset;
-    color: #dfe4ea;
 }
 
 button, .cancel {
     border-color: #747d8c;
-    background-color: #747d8c;
-    color: #dfe4ea;
-}
-
-.show_button, button i {
-    color: #2f3542;
 }
 
 #index_login, .section_type {
@@ -40,7 +37,6 @@ button, .cancel {
 }
 
 input {
-    background-color: #747d8c;
     border: unset;
 }
 
@@ -55,10 +51,6 @@ button:hover, .cancel:hover {
 
 nav div a:hover {
     color: #2ed573;
-}
-
-.accounts_results:hover {
-    background-color: #2f3542 ;
 }
 
 /* Checkbox */
