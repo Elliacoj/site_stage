@@ -1,7 +1,6 @@
 let checkBox = $('.show_button');
 let buttonList = $('.section_show_more');
 let buttonDelete = $('.account_delete');
-let buttonUpload = $('.section_link');
 
 $('.section_documents').each(function() {
     $(this).hide();
@@ -77,15 +76,4 @@ function confirmWindow(id) {
 buttonDelete.click(function () {
     confirmWindow($(this).val());
 });
-
-buttonUpload.click(function() {
-    let file = $(this).attr("name");
-
-    $.ajax({
-        type: "POST",
-        url: '../download.php',
-        data: "link=" + file,
-        dataType: "html"
-    });
-})
 
