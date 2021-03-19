@@ -2,7 +2,8 @@ let checkBox = $('.show_button');
 let buttonList = $('.section_show_more');
 let buttonDelete = $('.account_delete');
 let buttonLink = $('.linkDoc');
-let buttonModif = $('.accounts_modif');
+let choiceCat = $('#choiceCat');
+let divUser = $('.accounts_results');
 
 $('.section_documents').each(function() {
     $(this).hide();
@@ -92,6 +93,17 @@ buttonLink.click(function () {
     }
 })
 
-buttonModif.click(function () {
+choiceCat.on('change', function () {
+    divUser.each(function () {
+        if(choiceCat.val() === "tous") {
+            $(this).show();
+        }
 
+        else if(choiceCat.val() === $(this).attr('data-role')) {
+            $(this).show();
+        }
+        else {
+            $(this).hide();
+        }
+    })
 })

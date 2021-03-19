@@ -58,10 +58,11 @@ include './elements/header.php';
         <div id="accounts_list_search">
             <div>Recherche:</div>
             <div>par rôle:
-                <select>
+                <select id="choiceCat">
+                    <option value="tous">tous</option>
                     <?php
                     foreach ($roles as $item) {
-                    echo "<option value='" . $item->getId() . "'>" . $item->getName() . "</option>";
+                    echo "<option value='" . $item->getName() . "'>" . $item->getName() . "</option>";
                     }
                     ?>
                 </select>
@@ -77,9 +78,9 @@ include './elements/header.php';
                 $users = $users->getUser();
                 foreach ($users as $user) {
             ?>
-                    <div class="accounts_results">
+                    <div class="accounts_results" data-role="<?= $user->getRole()?>">
                         <div><?= $user->getLastname() . " " . $user->getFirstname()?></div>
-                        <div><?= $user->getRole()?></div>
+                        <div id="roleUser"><?= $user->getRole()?></div>
                         <div class="account_options">
                             <a href="administration.php?userModif=<?= $user->getMail()?>"><button class="accounts_modif">Modifier</button></a>
                             <button class="account_delete" value="<?= $user->getId()?>">X</button>
