@@ -62,6 +62,10 @@ header {
     height: 3rem;
 }
 
+.section_documents_item {
+    padding-left: 2rem;
+}
+
 /*nav elements */
 #navigation_bar {
     width: 16rem;
