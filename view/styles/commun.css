@@ -127,11 +127,11 @@ nav div a:hover, button:hover, .section_show_more, .cancel:hover, .section_optio
     position: absolute;
     top: 10%;
     left: 30%;
-    border: 1px solid black;
+    border: solid #ff6348 4px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    box-shadow: 2px 2px 9px darkgray;
+    box-shadow: 0 0 1rem #ff6348;
     border-radius: 3px;
 }
 

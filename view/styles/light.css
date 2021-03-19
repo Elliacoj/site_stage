@@ -3,7 +3,7 @@ body {
     background-color: #dfe4ea;
 }
 
-#navigation_bar, #index_login, .section_type {
+#navigation_bar, #index_login, .section_type, .accounts_results:hover, #confirm, #modaleUser {
     background-color: #f1f2f6;
 }
 
@@ -11,7 +11,7 @@ body {
     border-right: solid #2ed573 6px;
 }
 
-body, a i, .section_show_more i {
+body, a i, .section_show_more i, button i, .show_button, button:hover {
     color: #57606f;
 }
 
@@ -29,26 +29,16 @@ a, button {
     color: #747d8c;
 }
 
-.show_button, button i {
-    color: #57606f;
-}
-
 #index_login, .section_type {
     box-shadow: #57606f 0 0 1rem;
 }
 
-/*Hover color */
 button:hover {
-    color: #57606f;
     border: solid #2ed573 3px;
 }
 
 nav div a:hover {
     color: #2ed573;
-}
-
-.accounts_results:hover {
-    background-color: #f1f2f6 ;
 }
 
 /* Checkbox */
@@ -59,8 +49,4 @@ nav div a:hover {
 
 .section_show_label:hover input ~ .section_checkmark {
     background-color: #ccc;
-}
-
-#confirm, #modaleUser {
-    background-color: white;
 }
