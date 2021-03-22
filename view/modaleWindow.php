@@ -52,14 +52,18 @@ if(isset($_GET['docModif'])) {
     $document = $document->searchDocument(strip_tags(trim($_GET['docModif'])));
     ?>
 <div id="modaleUser">
-    <form action="../update.php?error=0&id=<?=$document->getId()?>" method="POST">
+    <form action="../update.php?error=0&id=<?=$document->getId()?>" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Titre: </label>
-            <input type="text" name="firstname" id="firstname" placeholder="<?=$document->getTitle()?>">
+            <input type="text" name="title" id="title" placeholder="<?=$document->getTitle()?>">
         </div>
         <div>
             <label for="link">lien: </label>
-            <input type="text" name="lastname" id="lastname" placeholder="<?=$document->getLink()?>">
+            <input type="text" name="link" id="link" placeholder="<?=$document->getLink()?>">
+        </div>
+        <div>
+            <label for="file"></label>
+            <input type="file" id="file" name="file">
         </div>
         <div>
             <label for="category">Catégorie: </label>
@@ -68,7 +72,7 @@ if(isset($_GET['docModif'])) {
                 $category = new CategoryController();
                 $categories = $category->getCategory();
                 foreach ($categories as $item) {
-                    /* @var Role $item */
+                    /* @var Category $item */
                     $selected = $item->getName() === $document->getCategory() ? 'selected' : '';
                     echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
                 }
