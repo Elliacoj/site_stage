@@ -2,7 +2,7 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-#admin_add_account, #accounts_list_search, #accounts_results_screen, #error_no_problem, #error_problem, #error_problem_mail {
+#admin_add_account, #admin_section, #accounts_list_search, #accounts_results_screen, #error_no_problem, #error_problem, #error_problem_mail {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: solid #2f3542 1px;
@@ -20,12 +20,12 @@ h2 {
     width: 33.33%;
 }
 
-#admin_add_account form div {
+#admin_add_account form div{
     padding: 0.5rem;
     width: 20%;
 }
 
-#admin_add_account form button {
+#admin_add_account form button{
     margin-top: 9%;
 }
 
@@ -33,8 +33,12 @@ h2 {
     justify-content: flex-end;
 }
 
-#admin_add_account form input {
+#admin_add_account form input{
     padding: 0.5rem 0.5rem;
+}
+
+#admin_section div {
+    width: 50%;
 }
 
 /*Error message */

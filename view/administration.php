@@ -16,6 +16,42 @@ include './elements/header.php';
     }
 ?>
 
+    <div id="admin_section">
+        <div>
+            <h2>Ajouter une catégorie:</h2>
+            <form>
+                <div>
+                    <label>Nom de la catégorie: </label>
+                    <input type="text" required>
+                </div>
+                <div>
+                    <button value="Envoyer">Ajouter</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <h2>Supprimer une catégorie:</h2>
+            <form>
+                <div>
+                    <label>Catégorie: </label>
+                    <select>
+                        <?php
+                        $category = new CategoryController();
+                        $categories = $category->getCategory();
+                        foreach ($categories as $item) {
+                            $selected = $item->getName();
+                            echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div>
+                    <button value="Envoyer" class="button_delete">Supprimer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div id="admin_add_account">
         <h2>Ajouter un nouveau compte:</h2>
         <form action="../create.php?table=User&error=0" method="POST" id="admin_create_user">
