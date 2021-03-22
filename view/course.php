@@ -20,9 +20,12 @@ foreach($categories as $category) {
             <div class="section_tittle"><?= $category->getName()?>
                 <i class="fas fa-plus-square section_show_more"></i>
             </div>
+            <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
             <div class="section_option">
                 <a href="course.php?docCreate=1&category=<?= $category->getName()?>&item=slide&doc=course.php"><i class="fas fa-folder-plus section_add_document"></a></i>
             </div>
+            <?php } ?>
+
             <div class="section_show_button">
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                 <label class="section_show_label">

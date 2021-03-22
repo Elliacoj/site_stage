@@ -40,7 +40,7 @@ buttonList.click(function () {
 
 // Create a window for confirm delete user
 function confirmWindow(id, table, doc) {
-    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "&table=" + table +"&doc=" + doc +"'>" +
+    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment faire ça?</div><a href='../delete.php?id=" + id + "&table=" + table +"&doc=" + doc +"'>" +
         "<button>Confirmer</button></a><a><button id='cancelUser'>Annuler</button></a></div>");
     let div = $('#confirm');
     let subDiv = $('#textConfirm');
