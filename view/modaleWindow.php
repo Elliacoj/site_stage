@@ -46,3 +46,56 @@ if(isset($_GET['userModif'])) {
 </div>
 <?php
 }
+
+if(isset($_GET['docModif'])) {
+    $document = new DocumentController();
+    $document = $document->searchDocument(strip_tags(trim($_GET['docModif'])));
+    ?>
+<div id="modaleUser">
+    <form action="../update.php?error=0&id=<?=$document->getId()?>" method="POST">
+        <div>
+            <label for="title">Titre: </label>
+            <input type="text" name="firstname" id="firstname" placeholder="<?=$document->getTitle()?>">
+        </div>
+        <div>
+            <label for="link">lien: </label>
+            <input type="text" name="lastname" id="lastname" placeholder="<?=$document->getLink()?>">
+        </div>
+        <div>
+            <label for="category">Catégorie: </label>
+            <select name="category_fk" id="category">
+                <?php
+                $category = new CategoryController();
+                $categories = $category->getCategory();
+                foreach ($categories as $item) {
+                    /* @var Role $item */
+                    $selected = $item->getName() === $document->getCategory() ? 'selected' : '';
+                    echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div>
+            <label for="item">Type de document: </label>
+            <select name="item_fk" id="item">
+                <?php
+                $item = new ItemController();
+                $items = $item->getItem();
+                foreach ($items as $value) {
+                    /* @var Item $value */
+                    $selected = $value->getName() === $document->getItem() ? 'selected' : '';
+                    echo "<option value='" . $value->getId() . "' ".$selected.">" . $value->getName() . "</option>";
+                }
+                ?>
+            </select>
+        </div>
+        <div class="account_options">
+            <div>
+                <button type="submit">Confirmer</button>
+                <a href='course.php'><button type="button" class="button_delete">Annuler</button></a>
+            </div>
+        </div>
+    </form>
+</div>
+<?php
+}

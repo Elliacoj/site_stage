@@ -1,6 +1,9 @@
 
         </div>
     </div>
+        <?php
+        include $root . "/view/modaleWindow.php";
+        ?>
 
         <!-- JQuery js -->
         <script src="./scripts/jquery-3.6.0.min.js"></script>

@@ -11,6 +11,11 @@ class DocumentController
         return ObjectController::get("SELECT * FROM document", Document::class);
     }
 
+    /**
+     * Return a document for item select
+     * @param $item
+     * @return array
+     */
     public function getDocumentType($item): array {
         return ObjectController::get("
                                         SELECT * FROM document  
@@ -43,5 +48,14 @@ class DocumentController
      */
     public function updateDocument($title, $value, $id) {
         ObjectController::update("UPDATE document SET $title = '$value' WHERE id = '$id'");
+    }
+
+    /**
+     * Search a Document in table document
+     * @param $id
+     * @return object
+     */
+    public function searchDocument($id): object {
+        return ObjectController::search("SELECT * FROM document WHERE id = '$id' LIMIT 1", Document::class);
     }
 }

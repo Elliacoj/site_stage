@@ -94,6 +94,5 @@ include './elements/header.php';
 
 
 <?php
-include "./modaleWindow.php";
 include "./elements/footer.php";
 ?>
