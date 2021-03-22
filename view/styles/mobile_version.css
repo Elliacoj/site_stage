@@ -3,6 +3,14 @@
     #index_login, .section_type {
         width: 100%;
     }
+
+    /* Modal */
+    #modaleUser {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0;
+    }
 }
 
 @media screen and (max-width: 700px){
@@ -62,6 +70,7 @@
         left: 0 !important;
         top: 15% !important;
     }
+
 }
 
 

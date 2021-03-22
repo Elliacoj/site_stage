@@ -20,7 +20,7 @@ html, body, #body_container, #navigation_bar {
 }
 
 /*For all: FLEX */
-header, #body_container, #index_login label,
+header, #body_container, #index_login label, #page_container,
 .section_type, .section_information, .section_show_button,
 .section_documents_item {
     display: flex;
@@ -36,7 +36,7 @@ header, #body_container, #index_login label,
     padding: 2rem 0;
 }
 
-#index_login input {
+#index_login input, #modaleUser {
     padding: 1rem 0.5rem;
 }
 
@@ -53,7 +53,7 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button, .cancel {
+#page_container, button, .cancel, #modaleUser div label, #modaleUser div input {
     font-size: 1rem;
 }
 
@@ -98,7 +98,6 @@ nav i {
 #page_container {
     overflow: auto;
     align-items: center;
-    display: flex;
     flex-direction: column;
 }
 
@@ -121,20 +120,41 @@ nav div a:hover, button:hover, .section_show_more, .cancel:hover, .section_optio
     visibility: hidden;
 }
 
+/* Modal */
 #modaleUser {
-    width: 40%;
+    width: 50%;
     height: auto;
     position: absolute;
-    top: 10%;
+    top: 5rem;
     left: 30%;
     border: solid #ff6348 4px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
-    box-shadow: 0 0 1rem #ff6348;
-    border-radius: 3px;
+    box-shadow: 0 0 0.5rem #ff6348;
+}
+
+#modaleUser div {
+    padding-bottom: 2%;
+    display: flex;
+    width: 100%;
+}
+
+#modaleUser div input {
+    height: 2rem;
+    width: 100%;
+}
+
+#modaleUser div label {
+    width: 30%;
 }
 
 #modaleUser form {
     margin: 1%;
+}
+
+.account_options div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
