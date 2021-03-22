@@ -7,7 +7,7 @@ body {
     background-color: #2f3542;
 }
 
-input, button, .cancel {
+input, button, .cancel, select {
     background-color: #747d8c;
 }
 
@@ -15,7 +15,7 @@ input, button, .cancel {
     border-right: solid #2ed573 6px;
 }
 
-body, a, a i, input, .section_show_more i, button, .cancel {
+body, a, a i, input, .section_show_more i, button, .cancel, select {
     color: #dfe4ea;
 }
 
@@ -36,7 +36,7 @@ button, .cancel {
     box-shadow: #2f3542 0 0 0.5rem;
 }
 
-input {
+input, select {
     border: unset;
 }
 

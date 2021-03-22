@@ -12,7 +12,8 @@ body {
 /*For all: 100% */
 header, #body_container, #page_container, #nav_logout_section button,
 .section_documents, .section_information, .section_documents_item,
-.modale div, .modale div input {
+.modale div, .modale div input,
+.account_options div {
     width: 100%;
 }
 
@@ -23,12 +24,17 @@ html, body, #body_container, #navigation_bar {
 /*For all: FLEX */
 header, #body_container, #index_login label, #page_container,
 .section_type, .section_information, .section_show_button, .section_documents_item,
-.modale, .modale div {
+#accounts_list_search, .accounts_results, #admin_add_account form,
+.modale, .modale div, .account_options div {
     display: flex;
 }
 
 #page_container, .modale {
     flex-direction: column;
+}
+
+#accounts_list_search, .accounts_results, #admin_add_account form {
+    flex-direction: row;
 }
 
 /* For all: PADDING */
@@ -45,7 +51,7 @@ header, #body_container, #index_login label, #page_container,
     padding: 1rem 0.5rem;
 }
 
-button, .cancel {
+button, .cancel, select {
     padding: 0.5rem 2rem;
 }
 
@@ -62,7 +68,7 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button, .cancel, .modale div label, .modale div input {
+#page_container, button, .cancel, .modale div label, .modale div input, select {
     font-size: 1rem;
 }
 
@@ -149,7 +155,5 @@ nav i {
 }
 
 .account_options div {
-    width: 100%;
-    display: flex;
     justify-content: center;
 }
