@@ -65,3 +65,8 @@ nav div a:hover {
 #confirm, #modaleUser {
     background-color: #2f3542 !important;
 }
+
+/* Modal */
+#modaleUser div input {
+    border-bottom: solid #f1f2f6 2px;
+}

@@ -50,3 +50,9 @@ nav div a:hover {
 .section_show_label:hover input ~ .section_checkmark {
     background-color: #ccc;
 }
+
+/* Modal */
+#modaleUser div input {
+    border: none;
+    border-bottom: solid #747d8c 2px;
+}

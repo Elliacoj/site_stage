@@ -24,7 +24,6 @@ checkBox.click(function () {
         table = "Document";
     }
 
-
     $.ajax({
         type: "POST",
         url: '../update.php',
@@ -51,12 +50,11 @@ function confirmWindow(id) {
         position: "absolute",
         top: "10%",
         left: "30%",
-        border: "4px solid #ff6348",
+        border: "4px solid #ff4757",
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-evenly",
-        boxShadow: "0 0 1rem #ff6348",
-        borderRadius: "3px"
+        boxShadow: "0 0 0.5rem #ff4757"
     });
 
     subDiv.css({
@@ -65,6 +63,8 @@ function confirmWindow(id) {
         fontSize: "2rem",
         paddingTop: "2%",
     })
+
+    cancel.addClass('button_delete');
 
     buttonDelete.off('click');
 
