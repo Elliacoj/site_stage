@@ -11,7 +11,7 @@ body {
     border-right: solid #2ed573 6px;
 }
 
-body, a i, .section_show_more i, button i, .show_button, button:hover {
+body, a i, .section_show_more i, button i, .show_button, button:hover, select {
     color: #57606f;
 }
 
@@ -42,7 +42,6 @@ nav div a:hover {
 }
 
 /* Checkbox */
-
 .section_show_label:hover input ~ .section_checkmark {
     background-color: #ccc;
 }
