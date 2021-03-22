@@ -18,7 +18,6 @@ function create($provide) {
     $controller = $_GET['table'] . "Controller";
     $new = new $controller();
     $add = "add" . $_GET['table'];
-    print_r($checkData);
     $state = $new->$add($checkData);
     if($state) {
         // utilisateur bien enregistré
@@ -43,24 +42,26 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'
 }
 
 if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'] == "Document") {
+    $itemName = new ItemController();
+    $itemName = $itemName->searchItem($_POST['item_fk']);
 
     if($_FILES['file']['error'] == "0") {
-        $tmp_name = $_FILES['file']['tmp_name'];
-        $itemName = new ItemController();
-        $itemName = $itemName->searchItem($_POST['item_fk']);
 
         if(file_exists($root . "/file/" . $itemName->getName() . "/" . $_POST['link'])) {
-            header("location: ./view/" . $_GET['doc'] . "?error=1");
+            header("location: ./view/" . $_GET['doc'] . "?error=2");
         }
         else {
-            move_uploaded_file($tmp_name, $root . "/file/" . $itemName->getName() . "/" . $_POST['link']);
+            $tmp_name = $_FILES['file']['tmp_name'];
 
+            move_uploaded_file($tmp_name, $root . "/file/" . $itemName->getName() . "/" . $_POST['link']);
             create($_GET['doc']);
+
             header("location: ./view/" . $_GET['doc'] . "?error=0");
         }
     }
-    else {
+    else if($_FILES['file']['error'] !== "0"){
         create($_GET['doc']);
+        header("location: ./view/" . $_GET['doc'] . "?error=0");
     }
 }
 

@@ -1,7 +1,24 @@
 <?php
 include './elements/header.php';
+
 $categories = new CategoryController();
 $categories = $categories->getCategory();
+
+?>
+    <link href="./styles/sections_style.css" rel="stylesheet">
+    <link href="./styles/admin_page.css" rel="stylesheet">
+<?php
+if (isset($_GET['error'])) {
+    if ($_GET['error'] === '0') {
+        echo '<div id="error_no_problem">La base de donnée à étais mise à jour!</div>';
+    }
+    else if ($_GET['error'] === '1') {
+        echo '<div id="error_problem">Un problème est survenus!</div>';
+    }
+    else if ($_GET['error'] === '2') {
+        echo '<div id="error_problem">Ce document existe déjà!</div>';
+    }
+}
 
 foreach($categories as $category) {
     $documents = new DocumentController();
@@ -11,9 +28,7 @@ foreach($categories as $category) {
         $check = "checked";
     }
     if(((isset($_SESSION['role']) && $_SESSION['role'] !== "administrateur") && $check === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] === "administrateur")) {
-        ?>
-        <link href="./styles/sections_style.css" rel="stylesheet">
-
+?>
         <div class="section_type">
             <div class="section_information">
                 <div class="section_tittle"><?= $category->getName()?>
@@ -58,10 +73,8 @@ foreach($categories as $category) {
                 }
             }
             ?>
-
         </div>
-
-        <?php
+<?php
     }
 }
 include "./elements/footer.php";
