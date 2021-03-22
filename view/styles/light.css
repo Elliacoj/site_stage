@@ -3,7 +3,7 @@ body {
     background-color: #dfe4ea;
 }
 
-#navigation_bar, #index_login, .section_type, .accounts_results:hover, #confirm, #modaleUser {
+#navigation_bar, #index_login, .section_type, .section_checkmark, .accounts_results:hover, #confirm, .modale {
     background-color: #f1f2f6;
 }
 
@@ -29,8 +29,8 @@ a, button {
     color: #747d8c;
 }
 
-#index_login, .section_type {
-    box-shadow: #57606f 0 0 1rem;
+#index_login, .section_type, .section_checkmark {
+    box-shadow: #57606f 0 0 0.5rem;
 }
 
 button:hover {
@@ -42,17 +42,13 @@ nav div a:hover {
 }
 
 /* Checkbox */
-.section_checkmark {
-    box-shadow: #57606f 0 0 4px;
-    background-color: #eee;
-}
 
 .section_show_label:hover input ~ .section_checkmark {
     background-color: #ccc;
 }
 
 /* Modal */
-#modaleUser div input {
+.modale div input {
     border: none;
     border-bottom: solid #747d8c 2px;
 }

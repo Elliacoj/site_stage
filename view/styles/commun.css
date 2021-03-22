@@ -11,7 +11,8 @@ body {
 
 /*For all: 100% */
 header, #body_container, #page_container, #nav_logout_section button,
-.section_documents, .section_information, .section_documents_item{
+.section_documents, .section_information, .section_documents_item,
+.modale div, .modale div input {
     width: 100%;
 }
 
@@ -21,9 +22,13 @@ html, body, #body_container, #navigation_bar {
 
 /*For all: FLEX */
 header, #body_container, #index_login label, #page_container,
-.section_type, .section_information, .section_show_button,
-.section_documents_item {
+.section_type, .section_information, .section_show_button, .section_documents_item,
+.modale, .modale div {
     display: flex;
+}
+
+#page_container, .modale {
+    flex-direction: column;
 }
 
 /* For all: PADDING */
@@ -36,12 +41,16 @@ header, #body_container, #index_login label, #page_container,
     padding: 2rem 0;
 }
 
-#index_login input, #modaleUser {
+#index_login input, .modale {
     padding: 1rem 0.5rem;
 }
 
 button, .cancel {
     padding: 0.5rem 2rem;
+}
+
+.section_documents_item {
+    padding-left: 2rem;
 }
 
 /* For all: FONT-SIZE */
@@ -53,17 +62,21 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button, .cancel, #modaleUser div label, #modaleUser div input {
+#page_container, button, .cancel, .modale div label, .modale div input {
     font-size: 1rem;
 }
 
-/* Individual page elements */
-header {
+/* For all: HEIGHT */
+nav, .modale {
+    height: auto;
+}
+
+header, nav div {
     height: 3rem;
 }
 
-.section_documents_item {
-    padding-left: 2rem;
+#navigation_open, .modale div input {
+    height: 2rem;
 }
 
 /*nav elements */
@@ -77,16 +90,10 @@ header {
 
 nav {
     padding-bottom: 1rem;
-    height: auto;
 }
 
 nav div {
-    height: 3rem;
     padding: 1rem 0;
-}
-
-#navigation_open {
-    height: 2rem;
 }
 
 nav i {
@@ -98,11 +105,9 @@ nav i {
 #page_container {
     overflow: auto;
     align-items: center;
-    flex-direction: column;
 }
 
 #nav_theme_switch {
-    cursor: pointer;
     margin-bottom: 1rem;
 }
 
@@ -111,7 +116,7 @@ nav i {
 }
 
 /* Pointer */
-nav div a:hover, button:hover, .section_show_more, .cancel:hover, .section_option i{
+#nav_theme_switch, nav div a:hover, button:hover, .section_show_more, .cancel:hover, .section_option i{
     cursor: pointer;
 }
 
@@ -121,35 +126,25 @@ nav div a:hover, button:hover, .section_show_more, .cancel:hover, .section_optio
 }
 
 /* Modal */
-#modaleUser {
+.modale {
     width: 50%;
-    height: auto;
     position: absolute;
     top: 5rem;
     left: 30%;
     border: solid #ff6348 4px;
-    display: flex;
-    flex-direction: column;
     justify-content: space-evenly;
     box-shadow: 0 0 0.5rem #ff6348;
 }
 
-#modaleUser div {
+.modale div {
     padding-bottom: 2%;
-    display: flex;
-    width: 100%;
 }
 
-#modaleUser div input {
-    height: 2rem;
-    width: 100%;
-}
-
-#modaleUser div label {
+.modale div label {
     width: 30%;
 }
 
-#modaleUser form {
+.modale form {
     margin: 1%;
 }
 

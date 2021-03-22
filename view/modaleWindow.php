@@ -4,7 +4,7 @@ if(isset($_GET['userModif'])) {
     $user = $user->logUser(strip_tags(trim($_GET['userModif'])));
 ?>
 
-<div id="modaleUser">
+<div id="modaleUser" class="modale">
     <form action="../update.php?error=0&id=<?=$user->getId()?>" method="POST">
         <div>
             <label for="firstname">Prénom: </label>
@@ -51,7 +51,7 @@ if(isset($_GET['docModif'])) {
     $document = new DocumentController();
     $document = $document->searchDocument(strip_tags(trim($_GET['docModif'])));
     ?>
-<div id="modaleUser">
+<div id="modaleUser" class="modale">
     <form action="../update.php?error=0&id=<?=$document->getId()?>" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Titre: </label>

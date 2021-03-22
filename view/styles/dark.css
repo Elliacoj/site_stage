@@ -3,7 +3,7 @@ body {
     background-color: #57606f;
 }
 
-#navigation_bar, #index_login, .section_type, .show_button, button i, .accounts_results:hover {
+#navigation_bar, #index_login, .section_type, .show_button, button i, .accounts_results:hover, #confirm, .modale {
     background-color: #2f3542;
 }
 
@@ -33,7 +33,7 @@ button, .cancel {
 }
 
 #index_login, .section_type {
-    box-shadow: #2f3542 0 0 1rem;
+    box-shadow: #2f3542 0 0 0.5rem;
 }
 
 input {
@@ -62,11 +62,7 @@ nav div a:hover {
     background-color: #ccc;
 }
 
-#confirm, #modaleUser {
-    background-color: #2f3542 !important;
-}
-
 /* Modal */
-#modaleUser div input {
+.modale div input {
     border-bottom: solid #f1f2f6 2px;
 }
