@@ -39,18 +39,17 @@ if(isset($_POST['title'], $_FILES['file'])) {
     $category = strip_tags(trim($_POST['category_fk']));
     $item = strip_tags(trim($_POST['item_fk']));
     $file = $_FILES['file'];
+    $document = new DocumentController();
+    $document = $document->searchDocument(strip_tags(trim($_GET['id'])));
+    $item = $document->getItem();
+    $root = $root . "/file/" . $item . "/" . $document->getLink();
 
-    if($_FILES['file'] !== null){
-        $document = new DocumentController();
-        $document = $document->searchDocument(strip_tags(trim($_GET['id'])));
-        $item = $document->getItem();
-        $root = $root . "/file/" . $item . "/" . $document->getLink();
-
+    if($_FILES['file']['error'] == "0"){
         if(file_exists($root)) {
             unlink($root);
             $tmp_name = $_FILES['file']['tmp_name'];
             if($_POST['link'] !== null) {
-                move_uploaded_file($tmp_name, $_SERVER['DOCUMENT_ROOT'] . "/" .$item . "/" . $_POST['link']);
+                move_uploaded_file($tmp_name, $_SERVER['DOCUMENT_ROOT'] . "/" .$item . "/" . $link);
             }
             else {
                 move_uploaded_file($tmp_name, $root);
@@ -59,13 +58,21 @@ if(isset($_POST['title'], $_FILES['file'])) {
         else {
             $tmp_name = $_FILES['file']['tmp_name'];
             if($_POST['link'] !== null) {
-                move_uploaded_file($tmp_name, $_SERVER['DOCUMENT_ROOT'] . "/file/" .$item . "/" . $_POST['link']);
+                move_uploaded_file($tmp_name, $_SERVER['DOCUMENT_ROOT'] . "/file/" .$item . "/" . $link);
             }
             else {
                 move_uploaded_file($tmp_name, $root);
             }
         }
     }
+    else {
+        if(is_file($root)) {
+            if($link !== null) {
+                rename($root, $_SERVER['DOCUMENT_ROOT'] . "/file/" .$item . "/" . $link);
+            }
+        }
+    }
+
     foreach ($_POST as $item => $value) {
         add($item, $value, "Document");
     }
