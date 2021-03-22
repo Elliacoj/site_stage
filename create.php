@@ -26,7 +26,7 @@ function create($provide) {
     }
     else {
         // erreur dans l'enregistrement
-        //header("location: ./view/" . $provide . "?error=1");
+        header("location: ./view/" . $provide . "?error=1");
     }
 }
 
@@ -50,17 +50,17 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'
         $itemName = $itemName->searchItem($_POST['item_fk']);
 
         if(file_exists($root . "/file/" . $itemName->getName() . "/" . $_POST['link'])) {
-            header("location: ./view/course.php?error=1");
+            header("location: ./view/" . $_GET['doc'] . "?error=1");
         }
         else {
             move_uploaded_file($tmp_name, $root . "/file/" . $itemName->getName() . "/" . $_POST['link']);
 
-            create("course.php");
-            header("location: ./view/course.php?error=0");
+            create($_GET['doc']);
+            header("location: ./view/" . $_GET['doc'] . "?error=0");
         }
     }
     else {
-        create("course.php");
+        create($_GET['doc']);
     }
 }
 

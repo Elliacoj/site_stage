@@ -78,5 +78,5 @@ if(isset($_POST['title'], $_FILES['file'])) {
         add($item, $value, "Document");
     }
 
-    header('location: ./view/course.php?error=0');
+    header('location: ./view/' . $_GET['doc'] . '?error=0');
 }

@@ -21,7 +21,7 @@ foreach($categories as $category) {
                 <i class="fas fa-plus-square section_show_more"></i>
             </div>
             <div class="section_option">
-                <a href="course.php?docCreate=1&category=<?= $category->getName()?>&item=slide"><i class="fas fa-folder-plus section_add_document"></a></i>
+                <a href="course.php?docCreate=1&category=<?= $category->getName()?>&item=slide&doc=course.php"><i class="fas fa-folder-plus section_add_document"></a></i>
             </div>
             <div class="section_show_button">
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
@@ -50,8 +50,8 @@ foreach($categories as $category) {
                 </div>
                 <div class="section_show_button">
                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
-                        <a href="course.php?docModif=<?= $document->getId()?>"><button>Modifier</button></a>
-                        <button class="button_delete" value="<?= $document->getId()?>">X</button>
+                        <a href="course.php?docModif=<?= $document->getId()?>&doc=course.php"><button>Modifier</button></a>
+                        <button class="button_delete" data-doc="course.php" value="<?= $document->getId()?>">X</button>
                     <label class="section_show_label">
                         <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
                         <span class="section_checkmark"></span>

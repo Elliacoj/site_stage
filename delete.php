@@ -12,13 +12,13 @@ if(isset($_GET['id'], $_GET['table'])) {
         $doc = $item->searchDocument($id);
         $link = $doc->getLink();
         $file = $doc->getItem();
-        unlink($root . "/file/" . $file . "/" . $link);
+        if(file_exists($root . "/file/" . $file . "/" . $link)) {
+            unlink($root . "/file/" . $file . "/" . $link);
+        }
     }
 
     $delete = "delete" . $table;
     $item->$delete($id);
-
-
 
     header("location: ./view/" . $_GET['doc'] . "?error=0");
 }

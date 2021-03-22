@@ -17,7 +17,10 @@ foreach($categories as $category) {
         <div class="section_type">
             <div class="section_information">
                 <div class="section_tittle"><?= $category->getName()?>
-                    <button class="section_show_more"><i class="fas fa-plus-square"></i></button>
+                    <i class="fas fa-plus-square section_show_more"></i>
+                </div>
+                <div class="section_option">
+                    <a href="projects.php?docCreate=1&category=<?= $category->getName()?>&item=projet&doc=projects.php"><i class="fas fa-folder-plus section_add_document"></a></i>
                 </div>
             </div>
 
@@ -33,9 +36,13 @@ foreach($categories as $category) {
                         ?>
                         <div class="section_documents">
                             <div class="section_documents_item">
-                                <div class="section_documents_item_tittle"><a class="linkDoc" href="" data-href="<?= $document->getLink()?>" data-type="projet" target="_blank"><?= $document->getTitle()?></a></div>
+                                <div class="section_documents_item_tittle">
+                                    <a class="linkDoc" href="" data-href="<?= $document->getLink()?>" data-type="projet" target="_blank"><?= $document->getTitle()?></a>
+                                </div>
                                 <div class="section_show_button">
                                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
+                                        <a href="projects.php?docModif=<?= $document->getId()?>&doc=projects.php"><button>Modifier</button></a>
+                                        <button class="button_delete" data-doc="projects.php" value="<?= $document->getId()?>">X</button>
                                         <label class="section_show_label">
                                             <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
                                             <span class="section_checkmark"></span>

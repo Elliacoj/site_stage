@@ -87,7 +87,7 @@ deleteUser.click(function () {
 });
 
 deleteDocument.click(function () {
-    confirmWindow($(this).val(), "Document", "course.php");
+    confirmWindow($(this).val(), "Document", $(this).attr('data-doc'));
 })
 
 buttonLink.click(function () {

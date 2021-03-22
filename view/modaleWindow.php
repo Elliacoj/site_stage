@@ -52,7 +52,7 @@ if(isset($_GET['docModif'])) {
     $document = $document->searchDocument(strip_tags(trim($_GET['docModif'])));
     ?>
 <div id="modaleUser" class="modale">
-    <form action="../update.php?error=0&id=<?=$document->getId()?>" method="POST" enctype="multipart/form-data">
+    <form action="../update.php?error=0&id=<?=$document->getId()?>&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
         <div>
             <label for="title">Titre: </label>
             <input type="text" name="title" id="title" placeholder="<?=$document->getTitle()?>">
@@ -96,7 +96,7 @@ if(isset($_GET['docModif'])) {
         <div class="account_options">
             <div>
                 <button type="submit">Confirmer</button>
-                <a href='course.php'><button type="button" class="delete_button">Annuler</button></a>
+                <a href='<?=$_GET['doc']?>'><button type="button" class="delete_button">Annuler</button></a>
             </div>
         </div>
     </form>
@@ -107,7 +107,7 @@ if(isset($_GET['docModif'])) {
 if(isset($_GET['docCreate'])) {
     ?>
     <div id="modaleUser" class="modale">
-        <form action="../create.php?error=0&table=Document" method="POST" enctype="multipart/form-data">
+        <form action="../create.php?error=0&table=Document&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="title">Titre: </label>
                 <input type="text" name="title" id="title" required">
@@ -140,7 +140,7 @@ if(isset($_GET['docCreate'])) {
                     $item = new ItemController();
                     $items = $item->getItem();
                     foreach ($items as $value) {
-                        $selected = $value->getName() === $_GET['category'] ? 'selected' : '';
+                        $selected = $value->getName() === $_GET['item'] ? 'selected' : '';
                         echo "<option value='" . $value->getId() . "' ".$selected.">" . $value->getName() . "</option>";
                     }
                     ?>
@@ -149,7 +149,7 @@ if(isset($_GET['docCreate'])) {
             <div class="account_options">
                 <div>
                     <button type="submit">Confirmer</button>
-                    <a href='course.php'><button type="button" class="delete_button">Annuler</button></a>
+                    <a href='<?=$_GET['doc']?>'><button type="button" class="delete_button">Annuler</button></a>
                 </div>
             </div>
         </form>
