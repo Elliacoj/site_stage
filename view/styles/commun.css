@@ -12,8 +12,9 @@ body {
 /*For all: 100% */
 header, #body_container, #page_container, #nav_logout_section button,
 .section_documents, .section_information, .section_documents_item,
-.modale div, .modale div input,
-.account_options div {
+#admin_accounts_list, #admin_add_account, #accounts_list_search, #accounts_results_screen, .account_options div,
+#error_no_problem, #error_problem, #error_problem_mail,
+.modale div, .modale div input {
     width: 100%;
 }
 
@@ -24,12 +25,13 @@ html, body, #body_container, #navigation_bar {
 /*For all: FLEX */
 header, #body_container, #index_login label, #page_container,
 .section_type, .section_information, .section_show_button, .section_documents_item,
-#accounts_list_search, .accounts_results, #admin_add_account form,
+#accounts_list_search, #admin_add_account form, #admin_add_account form div, .accounts_results, #admin_add_account form,
+.accounts_results, .account_options,
 .modale, .modale div, .account_options div {
     display: flex;
 }
 
-#page_container, .modale {
+#page_container, #admin_add_account form div , .modale {
     flex-direction: column;
 }
 
@@ -68,7 +70,7 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button, .cancel, .modale div label, .modale div input, select {
+#page_container, button, .cancel, #admin_add_account form input, .modale div label, .modale div input, select {
     font-size: 1rem;
 }
 
