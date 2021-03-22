@@ -48,7 +48,7 @@ if(isset($_POST['title'], $_FILES['file'])) {
         if(file_exists($root)) {
             unlink($root);
             $tmp_name = $_FILES['file']['tmp_name'];
-            if($_POST['link'] !== null) {
+            if($link !== "") {
                 move_uploaded_file($tmp_name, $_SERVER['DOCUMENT_ROOT'] . "/" .$item . "/" . $link);
             }
             else {
@@ -57,7 +57,8 @@ if(isset($_POST['title'], $_FILES['file'])) {
         }
         else {
             $tmp_name = $_FILES['file']['tmp_name'];
-            if($_POST['link'] !== null) {
+
+            if($link !== "") {
                 move_uploaded_file($tmp_name, $_SERVER['DOCUMENT_ROOT'] . "/file/" .$item . "/" . $link);
             }
             else {
@@ -67,7 +68,7 @@ if(isset($_POST['title'], $_FILES['file'])) {
     }
     else {
         if(is_file($root)) {
-            if($link !== null) {
+            if($link !== "") {
                 rename($root, $_SERVER['DOCUMENT_ROOT'] . "/file/" .$item . "/" . $link);
             }
         }

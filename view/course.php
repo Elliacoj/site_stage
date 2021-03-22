@@ -51,7 +51,7 @@ foreach($categories as $category) {
                 <div class="section_show_button">
                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                         <a href="course.php?docModif=<?= $document->getId()?>"><button>Modifier</button></a>
-                        <button class="button_delete">X</button>
+                        <button class="button_delete" value="<?= $document->getId()?>">X</button>
                     <label class="section_show_label">
                         <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
                         <span class="section_checkmark"></span>

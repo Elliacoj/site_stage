@@ -1,9 +1,10 @@
 let checkBox = $('.show_button');
 let buttonList = $('.section_show_more');
-let buttonDelete = $('.account_delete');
+let deleteUser = $('.account_delete');
 let buttonLink = $('.linkDoc');
 let choiceCat = $('#choiceCat');
 let divUser = $('.accounts_results');
+let deleteDocument = $('.button_delete');
 
 $('.section_documents').each(function() {
     $(this).hide();
@@ -38,8 +39,9 @@ buttonList.click(function () {
 })
 
 // Create a window for confirm delete user
-function confirmWindow(id) {
-    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "'><button>Confirmer</button></a><a href=''><button id='cancelUser'>Annuler</button></a></div>");
+function confirmWindow(id, table) {
+    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "&table=" + table +"'>" +
+        "<button>Confirmer</button></a><a><button id='cancelUser'>Annuler</button></a></div>");
     let div = $('#confirm');
     let subDiv = $('#textConfirm');
     let cancel = $('#cancelUser');
@@ -66,19 +68,27 @@ function confirmWindow(id) {
 
     cancel.addClass('button_delete');
 
-    buttonDelete.off('click');
+    deleteUser.off('click');
+    deleteDocument.off('click');
 
     cancel.click(function() {
         $('#confirm').remove();
-        buttonDelete.click(function () {
+        deleteUser.click(function () {
+            confirmWindow();
+        });
+        deleteDocument.click(function () {
             confirmWindow();
         });
     })
 }
 
-buttonDelete.click(function () {
-    confirmWindow($(this).val());
+deleteUser.click(function () {
+    confirmWindow($(this).val(), "User");
 });
+
+deleteDocument.click(function () {
+    confirmWindow($(this).val(), "Document");
+})
 
 buttonLink.click(function () {
     let link = $(this).attr("data-href");

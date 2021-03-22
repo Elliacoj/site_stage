@@ -37,7 +37,7 @@ class DocumentController
      * @param $id
      */
     public function deleteDocument($id) {
-        ObjectController::delete("DELETE FROM document WHERE id = $id)");
+        ObjectController::delete("DELETE FROM document WHERE id = $id");
     }
 
     /**
