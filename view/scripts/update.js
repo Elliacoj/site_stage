@@ -39,8 +39,8 @@ buttonList.click(function () {
 })
 
 // Create a window for confirm delete user
-function confirmWindow(id, table) {
-    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "&table=" + table +"'>" +
+function confirmWindow(id, table, doc) {
+    $("body").append("<div id='confirm'><div id='textConfirm'>Voulez-vous vraiment delete l'utilisateur?</div><a href='../delete.php?id=" + id + "&table=" + table +"&doc=" + doc +"'>" +
         "<button>Confirmer</button></a><a><button id='cancelUser'>Annuler</button></a></div>");
     let div = $('#confirm');
     let subDiv = $('#textConfirm');
@@ -83,11 +83,11 @@ function confirmWindow(id, table) {
 }
 
 deleteUser.click(function () {
-    confirmWindow($(this).val(), "User");
+    confirmWindow($(this).val(), "User", "administratif.php");
 });
 
 deleteDocument.click(function () {
-    confirmWindow($(this).val(), "Document");
+    confirmWindow($(this).val(), "Document", "course.php");
 })
 
 buttonLink.click(function () {

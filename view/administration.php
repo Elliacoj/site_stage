@@ -18,7 +18,7 @@ include './elements/header.php';
 
     <div id="admin_add_account">
         <h2>Ajouter un nouveau compte:</h2>
-        <form action="../create.php?table=user&error=0" method="POST" id="admin_create_user">
+        <form action="../create.php?table=User&error=0" method="POST" id="admin_create_user">
             <div>
                 <label for="firstname">Prénom: </label>
                 <input type="text" name="firstname" id="firstname" required>

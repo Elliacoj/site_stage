@@ -103,3 +103,56 @@ if(isset($_GET['docModif'])) {
 </div>
 <?php
 }
+
+if(isset($_GET['docCreate'])) {
+    ?>
+    <div id="modaleUser" class="modale">
+        <form action="../create.php?error=0&table=Document" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="title">Titre: </label>
+                <input type="text" name="title" id="title" required">
+            </div>
+            <div>
+                <label for="link">lien: </label>
+                <input type="text" name="link" id="link" required">
+            </div>
+            <div>
+                <label for="file"></label>
+                <input type="file" id="file" name="file">
+            </div>
+            <div>
+                <label for="category">Catégorie: </label>
+                <select name="category_fk" id="category">
+                    <?php
+                    $category = new CategoryController();
+                    $categories = $category->getCategory();
+                    foreach ($categories as $item) {
+                        $selected = $item->getName() === $_GET['category'] ? 'selected' : '';
+                        echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div>
+                <label for="item">Type de document: </label>
+                <select name="item_fk" id="item">
+                    <?php
+                    $item = new ItemController();
+                    $items = $item->getItem();
+                    foreach ($items as $value) {
+                        $selected = $value->getName() === $_GET['category'] ? 'selected' : '';
+                        echo "<option value='" . $value->getId() . "' ".$selected.">" . $value->getName() . "</option>";
+                    }
+                    ?>
+                </select>
+            </div>
+            <div class="account_options">
+                <div>
+                    <button type="submit">Confirmer</button>
+                    <a href='course.php'><button type="button" class="delete_button">Annuler</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <?php
+}

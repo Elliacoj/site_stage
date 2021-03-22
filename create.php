@@ -1,14 +1,7 @@
 <?php
 require_once "require.php";
-if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0) {
-    if(isset($_POST['mail'])) {
-        $search = new UserController();
-        if($search->logUser($_POST['mail'])) {
-            // adresse mail existante
-            header("location: ./view/administration.php?error=2");
-        }
-    }
 
+function create($provide) {
     $data = $_POST;
     $checkData = "null";
     foreach ($data as $item => $value) {
@@ -18,18 +11,56 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0) {
         }
         $checkData .= ", '" . $check . "'";
     }
+    if($_GET['table'] === "Document") {
+        $checkData .= ", '0'";
+    }
 
     $controller = $_GET['table'] . "Controller";
-    $newUser = new $controller();
-
-    $state = $newUser->addUser($checkData);
+    $new = new $controller();
+    $add = "add" . $_GET['table'];
+    print_r($checkData);
+    $state = $new->$add($checkData);
     if($state) {
         // utilisateur bien enregistré
-        header("location: ./view/administration.php?error=0");
+        header("location: ./view/" . $provide . "?error=0");
     }
     else {
         // erreur dans l'enregistrement
-        header("location: ./view/administration.php?error=1");
+        //header("location: ./view/" . $provide . "?error=1");
+    }
+}
+
+if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'] == "User") {
+    if(isset($_POST['mail'])) {
+        $search = new UserController();
+        if($search->logUser($_POST['mail'])) {
+            // adresse mail existante
+            header("location: ./view/administration.php?error=2");
+        }
+    }
+
+    create("administration.php");
+}
+
+if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'] == "Document") {
+
+    if($_FILES['file']['error'] == "0") {
+        $tmp_name = $_FILES['file']['tmp_name'];
+        $itemName = new ItemController();
+        $itemName = $itemName->searchItem($_POST['item_fk']);
+
+        if(file_exists($root . "/file/" . $itemName->getName() . "/" . $_POST['link'])) {
+            header("location: ./view/course.php?error=1");
+        }
+        else {
+            move_uploaded_file($tmp_name, $root . "/file/" . $itemName->getName() . "/" . $_POST['link']);
+
+            create("course.php");
+            header("location: ./view/course.php?error=0");
+        }
+    }
+    else {
+        create("course.php");
     }
 }
 
