@@ -5,10 +5,10 @@ include './elements/header.php';
 <?php
     if (isset($_GET['error'])){
         if ($_GET['error'] === '0'){
-            echo '<div id="error_no_problem">La base de donnée à étais mise à jour!</div>';
+            echo '<div id="error_no_problem">La base de données a été mise à jour!</div>';
         }
         else if ($_GET['error'] === '1'){
-            echo '<div id="error_problem">Un problème est survenus!</div>';
+            echo '<div id="error_problem">Un problème est survenu!</div>';
         }
         else if ($_GET['error'] === '2'){
             echo '<div id="error_problem_mail">Adresse mail déjà utilisée!</div>';
