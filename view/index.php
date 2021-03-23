@@ -6,10 +6,10 @@
 
 if (isset($_GET['error'])){
     if ($_GET['error'] === '1'){
-        echo "<div id='error_problem'>Cette adresse mail n'existe pas!</div>";
+        echo "<div id='error_problem'>Le mot de passe ou l'adresse mail est incorrect!</div>";
     }
     else if ($_GET['error'] === '2'){
-        echo '<div id="error_problem">Mot de passe incorrect!</div>';
+        echo '<div id="error_problem">Un problème est survenu!</div>';
     }
 }
 ?>
