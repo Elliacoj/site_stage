@@ -18,7 +18,21 @@ if(isset($_GET['id'], $_GET['table'])) {
     }
 
     $delete = "delete" . $table;
-    $item->$delete($id);
 
-    header("location: ./view/" . $_GET['doc'] . "?error=0");
+    if($_GET['table'] === "Category") {
+        $document = new DocumentController();
+        $document = $document->catDocument($id);
+        echo "1";
+        if(count($document) !== 0) {
+            header("location: ./view/" . $_GET['doc'] . "?error=3");
+        }
+        else {
+            $item->$delete($id);
+            header("location: ./view/" . $_GET['doc'] . "?error=0");
+        }
+    }
+
+    if($item->$delete($id) === null) {
+        header("location: ./view/" . $_GET['doc'] . "?error=0");
+    }
 }

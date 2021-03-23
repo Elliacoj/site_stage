@@ -1,6 +1,7 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/require.php";
 
+// Data for switch checkbox
 if(isset($_POST['checkId'])) {
     $id = strip_tags(trim($_POST['checkId']));
     $check = strip_tags(trim($_POST['checkValue']));
@@ -10,6 +11,13 @@ if(isset($_POST['checkId'])) {
     $category = new $controller();
     $category->$update("default_visibility", $check, $id);
 }
+
+/**
+ * Add new value in choice table
+ * @param $title
+ * @param $value
+ * @param $table
+ */
 function add($title, $value, $table){
     if($value !== "") {
         $item = $table . "Controller";
@@ -19,12 +27,18 @@ function add($title, $value, $table){
     }
 }
 
+// Data form for update user
 if(isset($_POST['firstname'], $_POST['lastname'], $_POST['mail'])) {
     $firstname = strip_tags(trim($_POST['firstname']));
     $lastname = strip_tags(trim($_POST['lastname']));
     $mail = strip_tags(trim($_POST['mail']));
     $role = strip_tags(trim($_POST['role']));
     $password = strip_tags(trim($_POST['password']));
+    $search = new UserController();
+
+    if($_POST['mail'] !== "" && $search->logUser($_POST['mail'])) {
+        header("location: ./view/administration.php?error=2");
+    }
 
     foreach ($_POST as $item => $value) {
         add($item,$value, "User");
@@ -33,6 +47,7 @@ if(isset($_POST['firstname'], $_POST['lastname'], $_POST['mail'])) {
     header('location: ./view/administration.php?error=0');
 }
 
+// Data form for update document
 if(isset($_POST['title'], $_FILES['file'])) {
     $title = strip_tags(trim($_POST['title']));
     $link = strip_tags(trim($_POST['link']));

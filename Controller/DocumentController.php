@@ -58,4 +58,8 @@ class DocumentController
     public function searchDocument($id): object {
         return ObjectController::search("SELECT * FROM document WHERE id = '$id' LIMIT 1", Document::class);
     }
+
+    public function catDocument($id): array {
+        return ObjectController::get("SELECT * FROM document WHERE document.category_fk = '$id'", Document::class);
+    }
 }

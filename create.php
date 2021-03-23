@@ -11,7 +11,7 @@ function create($provide) {
         }
         $checkData .= ", '" . $check . "'";
     }
-    if($_GET['table'] === "Document") {
+    if($_GET['table'] === "Document" || $_GET['table'] === "Category") {
         $checkData .= ", '0'";
     }
 
@@ -65,3 +65,6 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'
     }
 }
 
+if(isset($_GET['error'], $_POST['name']) && $_GET['error'] === "0") {
+    create("administration.php");
+}

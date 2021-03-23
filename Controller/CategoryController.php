@@ -24,7 +24,7 @@ class CategoryController
      * @param $data
      */
     public function addCategory($data) {
-        ObjectController::add("INSERT INTO category VALUES ($data)");
+        return ObjectController::add("INSERT INTO category VALUES ($data)");
     }
 
     /**
@@ -32,7 +32,7 @@ class CategoryController
      * @param $id
      */
     public function deleteCategory($id) {
-        ObjectController::delete("DELETE FROM category WHERE id = $id");
+        return ObjectController::delete("DELETE FROM category WHERE id = $id");
     }
 
     /**
@@ -42,6 +42,6 @@ class CategoryController
      * @param $id
      */
     public function updateCategory($title, $value, $id) {
-        ObjectController::update("UPDATE category SET $title = '$value' WHERE id = '$id'");
+        return ObjectController::update("UPDATE category SET $title = '$value' WHERE id = '$id'");
     }
 }

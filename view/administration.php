@@ -13,16 +13,19 @@ include './elements/header.php';
         else if ($_GET['error'] === '2'){
             echo '<div id="error_problem_mail">Adresse mail déjà utilisée!</div>';
         }
+        else if ($_GET['error'] === '3'){
+            echo '<div id="error_problem">Cette catégorie est liée à des documents!</div>';
+        }
     }
 ?>
 
     <div id="admin_section">
         <div>
             <h2>Ajouter une catégorie:</h2>
-            <form>
+            <form method="POST" action="../create.php?error=0&table=Category">
                 <div>
-                    <label>Nom de la catégorie: </label>
-                    <input type="text" required>
+                    <label for="categoryAdd">Nom de la catégorie: </label>
+                    <input type="text" id="categoryAdd" name="name" required>
                 </div>
                 <div>
                     <button value="Envoyer">Ajouter</button>
@@ -33,8 +36,8 @@ include './elements/header.php';
             <h2>Supprimer une catégorie:</h2>
             <form>
                 <div>
-                    <label>Catégorie: </label>
-                    <select>
+                    <label for="categoryDel">Catégorie: </label>
+                    <select name="name" id="categoryDel">
                         <?php
                         $category = new CategoryController();
                         $categories = $category->getCategory();
@@ -46,7 +49,7 @@ include './elements/header.php';
                     </select>
                 </div>
                 <div>
-                    <button value="Envoyer" class="button_delete">Supprimer</button>
+                    <button type="button" id="buttonDelCat" class="delete_button">Supprimer</button>
                 </div>
             </form>
         </div>

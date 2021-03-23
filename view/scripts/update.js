@@ -5,6 +5,7 @@ let buttonLink = $('.linkDoc');
 let choiceCat = $('#choiceCat');
 let divUser = $('.accounts_results');
 let deleteDocument = $('.button_delete');
+let buttonDelCat = $('#buttonDelCat');
 
 $('.section_documents').each(function() {
     $(this).hide();
@@ -83,11 +84,15 @@ function confirmWindow(id, table, doc) {
 }
 
 deleteUser.click(function () {
-    confirmWindow($(this).val(), "User", "administratif.php");
+    confirmWindow($(this).val(), "User", "administration.php");
 });
 
 deleteDocument.click(function () {
     confirmWindow($(this).val(), "Document", $(this).attr('data-doc'));
+})
+
+buttonDelCat.click(function () {
+    confirmWindow($("#categoryDel").val(), "Category", "administration.php");
 })
 
 buttonLink.click(function () {
