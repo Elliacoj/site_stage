@@ -115,6 +115,7 @@ nav i {
 
 /* page elements */
 #page_container {
+    margin-bottom: 1rem;
     overflow: auto;
     align-items: center;
 }
