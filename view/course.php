@@ -23,7 +23,7 @@ $categories = $categories->secCategory("1");
 
 foreach($categories as $category) {
     $documents = new DocumentController();
-    $documents = $documents->getDocument();
+    $documents = $documents->secDocument($category->getId());
     $check = "";
     if($category->getDefault_visibility() === 1) {
         $check = "checked";
@@ -92,7 +92,7 @@ $categories = $categories->secCategory("2");
 
 foreach($categories as $category) {
 $documents = new DocumentController();
-$documents = $documents->getDocument();
+$documents = $documents->secDocument($category->getId());
 $check = "";
 if($category->getDefault_visibility() === 1) {
     $check = "checked";

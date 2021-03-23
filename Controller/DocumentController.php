@@ -55,4 +55,13 @@ class DocumentController
     public function catDocument($id): array {
         return ObjectController::get("SELECT * FROM document WHERE document.category_fk = '$id'", Document::class);
     }
+
+    /**
+     * Search document by defined section_fk in table category
+     * @param $id
+     * @return array
+     */
+    public function secDocument($id): array {
+        return ObjectController::get("SELECT * FROM document WHERE document.category_fk = '$id'", Document::class);
+    }
 }
