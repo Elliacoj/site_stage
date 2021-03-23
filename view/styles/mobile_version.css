@@ -49,7 +49,7 @@
 
     #page_container {
         padding-top: 5rem;
-        margin-left: 0 !important;
+        margin-left: 0;
     }
 
     #nav_welcome_message, nav, #nav_logout_section {
