@@ -13,6 +13,7 @@ class UserController
     /**
      * Add a User in table User
      * @param $data
+     * @return false|int
      */
     public function addUser($data) {
         return ObjectController::add("INSERT INTO user VALUES ($data)");

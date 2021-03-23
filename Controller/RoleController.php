@@ -23,9 +23,10 @@ class RoleController
     /**
      * Add a role in table role
      * @param $data
+     * @return false|int
      */
     public function addRole($data) {
-        ObjectController::add("INSERT INTO role VALUES ($data)");
+        return ObjectController::add("INSERT INTO role VALUES ($data)");
     }
 
     /**

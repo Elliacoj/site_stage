@@ -7,6 +7,7 @@ let divUser = $('.accounts_results');
 let deleteDocument = $('.button_delete');
 let buttonDelCat = $('#buttonDelCat');
 
+// Blind all document
 $('.section_documents').each(function() {
     $(this).hide();
 });
@@ -83,18 +84,22 @@ function confirmWindow(id, table, doc) {
     })
 }
 
+// Delete a user
 deleteUser.click(function () {
     confirmWindow($(this).val(), "User", "administration.php");
 });
 
+// Delete a document
 deleteDocument.click(function () {
     confirmWindow($(this).val(), "Document", $(this).attr('data-doc'));
 })
 
+// Delete a category
 buttonDelCat.click(function () {
     confirmWindow($("#categoryDel").val(), "Category", "administration.php");
 })
 
+// Change hrf according to type of link
 buttonLink.click(function () {
     let link = $(this).attr("data-href");
 
@@ -108,6 +113,7 @@ buttonLink.click(function () {
     }
 })
 
+// Change list of user according to type of role
 choiceCat.on('change', function () {
     divUser.each(function () {
         if(choiceCat.val() === "tous") {

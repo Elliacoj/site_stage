@@ -12,24 +12,12 @@ class DocumentController
     }
 
     /**
-     * Return a document for item select
-     * @param $item
-     * @return array
-     */
-    public function getDocumentType($item): array {
-        return ObjectController::get("
-                                        SELECT * FROM document  
-                                            INNER JOIN item ON item.id = document.item_fk
-                                        WHERE item.name = '$item'
-                                        ", Document::class);
-    }
-
-    /**
      * Add a document in table document
      * @param $data
+     * @return false|int
      */
     public function addDocument($data) {
-        ObjectController::add("INSERT INTO document VALUES ($data)");
+        return ObjectController::add("INSERT INTO document VALUES ($data)");
     }
 
     /**
@@ -59,6 +47,11 @@ class DocumentController
         return ObjectController::search("SELECT * FROM document WHERE id = '$id' LIMIT 1", Document::class);
     }
 
+    /**
+     * Search document by defined category_fk
+     * @param $id
+     * @return array
+     */
     public function catDocument($id): array {
         return ObjectController::get("SELECT * FROM document WHERE document.category_fk = '$id'", Document::class);
     }

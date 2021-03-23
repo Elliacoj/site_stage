@@ -22,6 +22,7 @@ class CategoryController
     /**
      * Add a Category in table category
      * @param $data
+     * @return false|int
      */
     public function addCategory($data) {
         return ObjectController::add("INSERT INTO category VALUES ($data)");
