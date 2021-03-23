@@ -20,6 +20,8 @@ if (isset($_GET['error'])) {
 $categories = new CategoryController();
 $categories = $categories->secCategory("1");
 
+echo '<h2>Section Bac +2</h2>';
+
 foreach($categories as $category) {
     $documents = new DocumentController();
     $documents = $documents->secDocument($category->getId());
@@ -48,7 +50,7 @@ foreach($categories as $category) {
                     $checkDoc = "checked";
                 }
 
-                if(((isset($_SESSION['role']) && $_SESSION['role'] === "apprenant_t2") && $check === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] !== "apprenant_t2")) {
+                if(((isset($_SESSION['role']) && $_SESSION['role'] === "apprenant_t2") && $checkDoc === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] !== "apprenant_t2")) {
                     if(($document->getCategory() === $category->getName()) && ($document->getItem() === "projet")) {
                         ?>
                         <div class="section_documents">
@@ -81,6 +83,10 @@ foreach($categories as $category) {
 $categories = new CategoryController();
 $categories = $categories->secCategory("2");
 
+if(isset($_SESSION['role']) && $_SESSION['role'] !== "apprenant_t2") {
+    echo '<h2>Section Bac +4</h2>';
+}
+
 foreach($categories as $category) {
     $documents = new DocumentController();
     $documents = $documents->secDocument($category->getId());
@@ -109,7 +115,7 @@ foreach($categories as $category) {
                     $checkDoc = "checked";
                 }
 
-                if(((isset($_SESSION['role']) && $_SESSION['role'] === "apprenant_t4") && $check === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] !== "apprenant_t2" && $_SESSION['role'] !== "apprenant_t4")) {
+                if(((isset($_SESSION['role']) && $_SESSION['role'] === "apprenant_t4") && $checkDoc === "checked") || (isset($_SESSION['role']) && $_SESSION['role'] !== "apprenant_t2" && $_SESSION['role'] !== "apprenant_t4")) {
                     if(($document->getCategory() === $category->getName()) && ($document->getItem() === "projet")) {
                         ?>
                         <div class="section_documents">
