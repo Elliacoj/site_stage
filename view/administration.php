@@ -28,9 +28,14 @@ include './elements/header.php';
                     <input type="text" id="categoryAdd" name="name" required>
                 </div>
                 <div>
-                    <select>
+                    <select name="section_fk">
                         <?php
-
+                        $section = new SectionController();
+                        $sections = $section->getSection();
+                        foreach ($sections as $item) {
+                            $selected = $item->getName();
+                            echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
+                        }
                         ?>
                     </select>
                 </div>
@@ -50,7 +55,7 @@ include './elements/header.php';
                         $categories = $category->getCategory();
                         foreach ($categories as $item) {
                             $selected = $item->getName();
-                            echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
+                            echo "<option value='" . $item->getId() . "' ".$selected.">"  .$item->getName() . " (" .$item->getSection() . ")" ."</option>";
                         }
                         ?>
                     </select>
