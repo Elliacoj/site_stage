@@ -4,6 +4,18 @@
         width: 100%;
     }
 
+    #admin_section {
+        flex-direction: column;
+    }
+
+    #admin_section div, #admin_add_account form div, .accounts_results div {
+        width: 100%;
+    }
+
+    #admin_add_account form, .accounts_results {
+        flex-direction: column;
+    }
+
     /* Modal */
     .modale {
         width: 100%;
