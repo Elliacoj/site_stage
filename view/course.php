@@ -1,6 +1,5 @@
 <?php
 include './elements/header.php';
-
 ?>
     <link href="./styles/sections_style.css" rel="stylesheet">
     <link href="./styles/admin_page.css" rel="stylesheet">
@@ -20,6 +19,7 @@ if (isset($_GET['error'])) {
 
 $categories = new CategoryController();
 $categories = $categories->secCategory("1");
+echo '<h2>Section Bac +2</h2>';
 
 foreach($categories as $category) {
     $documents = new DocumentController();
@@ -89,6 +89,7 @@ foreach($categories as $category) {
 }
 $categories = new CategoryController();
 $categories = $categories->secCategory("2");
+echo '<h2>Section Bac +4</h2>';
 
 foreach($categories as $category) {
 $documents = new DocumentController();
