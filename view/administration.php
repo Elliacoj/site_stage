@@ -24,8 +24,15 @@ include './elements/header.php';
             <h2>Ajouter une catégorie:</h2>
             <form method="POST" action="../create.php?error=0&table=Category">
                 <div>
-                    <label for="categoryAdd">Nom de la catégorie: </label>
+                    <label for="categoryAdd">Nom: </label>
                     <input type="text" id="categoryAdd" name="name" required>
+                </div>
+                <div>
+                    <select>
+                        <?php
+
+                        ?>
+                    </select>
                 </div>
                 <div>
                     <button value="Envoyer">Ajouter</button>
