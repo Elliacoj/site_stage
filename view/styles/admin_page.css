@@ -1,3 +1,31 @@
+@media screen and (min-width: 1000px){
+
+    #admin_section form, #admin_section div, .accounts_results {
+        flex-direction: row;
+    }
+
+    #admin_section div {
+        width: 50%;
+    }
+
+    #admin_add_account form {
+        flex-direction: row;
+    }
+
+    #admin_add_account form div {
+        flex-direction: column;
+    }
+
+    #admin_add_account form div{
+        width: 20%;
+    }
+
+    .accounts_results div {
+        width: 33.33%;
+    }
+
+}
+
 h2 {
     margin-bottom: 0.5rem;
 }
@@ -16,13 +44,12 @@ h2 {
     align-items: center;
 }
 
-#accounts_list_search div, .accounts_results div {
+#accounts_list_search div {
     width: 33.33%;
 }
 
 #admin_add_account form div{
     padding: 0.5rem;
-    width: 20%;
 }
 
 #admin_add_account form button{
@@ -35,10 +62,6 @@ h2 {
 
 #admin_add_account form input, #admin_section form input{
     padding: 0.5rem 0.5rem;
-}
-
-#admin_section div {
-    width: 50%;
 }
 
 /*Error message */
