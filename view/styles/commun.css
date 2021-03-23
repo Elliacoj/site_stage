@@ -19,7 +19,16 @@ header, #body_container, #page_container, #nav_logout_section button,
 }
 
 html, body, #body_container, #navigation_bar {
+    height: auto;
+}
+
+#navigation_bar {
+    position: fixed;
     height: 100%;
+}
+
+#page_container {
+    margin-left: 16rem;
 }
 
 /*For all: FLEX */
