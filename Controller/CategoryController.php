@@ -45,4 +45,13 @@ class CategoryController
     public function updateCategory($title, $value, $id) {
         return ObjectController::update("UPDATE category SET $title = '$value' WHERE id = '$id'");
     }
+
+    /**
+     * Search category by defined section_fk
+     * @param $id
+     * @return array
+     */
+    public function secCategory($id): array {
+        return ObjectController::get("SELECT * FROM category WHERE category.section_fk = '$id'", Category::class);
+    }
 }

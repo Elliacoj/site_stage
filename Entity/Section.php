@@ -1,7 +1,7 @@
 <?php
 
 
-class Item
+class Section
 {
     private ?int $id;
     private ?string $name;
@@ -38,9 +38,9 @@ class Item
     /**
      * Set the name of Item
      * @param string|null $name
-     * @return Item
+     * @return Section
      */
-    public function setName(?string $name): Item
+    public function setName(?string $name): Section
     {
         $this->name = $name;
         return $this;
