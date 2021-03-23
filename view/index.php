@@ -3,8 +3,18 @@
     if(isset($_SESSION['id'], $_SESSION['mail'])) {
         header("location: ./home.php");
     }
+
+if (isset($_GET['error'])){
+    if ($_GET['error'] === '1'){
+        echo "<div id='error_problem'>Cette adresse mail n'existe pas!</div>";
+    }
+    else if ($_GET['error'] === '2'){
+        echo '<div id="error_problem">Mot de passe incorrect!</div>';
+    }
+}
 ?>
 <link href="./styles/index_style.css" rel="stylesheet">
+<link href="./styles/admin_page.css" rel="stylesheet">
 
     <form id="index_login" method="POST" action="../login.php?error=0">
         Identification
