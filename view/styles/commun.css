@@ -75,7 +75,7 @@ select {
 }
 
 /* For all: FONT-SIZE */
-#navigation_bar, #nav_welcome_message, .section_show_more {
+#navigation_bar, #nav_welcome_message, .section_show_more,  .modale h2  {
     font-size: 1.3rem;
 }
 
@@ -83,7 +83,7 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button, .cancel, #admin_add_account form input, .modale div label, .modale div input, select {
+#page_container, button, .cancel, #admin_add_account form input, .modale div label, .modale div input, select,  .modale span {
     font-size: 1rem;
 }
 
@@ -147,6 +147,11 @@ nav i {
     visibility: hidden;
 }
 
+/* Nav */
+#navigation_bar {
+    border-right: solid #2ed573 6px;
+}
+
 /* Modal */
 .modale {
     width: 50%;
@@ -172,6 +177,19 @@ nav i {
 
 .account_options div {
     justify-content: center;
+}
+
+.modale_close {
+    font-size: 2rem;
+    position: absolute;
+    color: #ff6348;
+    top: -3px;
+    right: 0;
+    border-bottom-left-radius: 20px;
+}
+
+.modale h2 {
+    text-decoration-line: underline;
 }
 
 /* Messages */

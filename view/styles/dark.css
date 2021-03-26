@@ -11,10 +11,6 @@ input, button, .cancel, select {
     background-color: #747d8c;
 }
 
-#navigation_bar {
-    border-right: solid #2ed573 6px;
-}
-
 body, a, a i, input, .section_show_more i, button, .cancel, select {
     color: #dfe4ea;
 }
