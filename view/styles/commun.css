@@ -213,6 +213,11 @@ nav div a:hover {
     padding-bottom: 0 !important;
 }
 
+.delete_message {
+    position: absolute;
+    right: 1.5rem;
+}
+
 /* Messages */
 .message {
     font-size: 1.4rem;
