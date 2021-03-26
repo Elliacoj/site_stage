@@ -66,3 +66,16 @@ nav div a:hover {
 .modale div input {
     border-bottom: solid #f1f2f6 2px;
 }
+
+/* Message */
+@keyframes new_message_anim {
+    0% {
+        color: #f1f2f6 ;
+    }
+    50% {
+        color: #2ed573;
+    }
+    100% {
+        color: #f1f2f6;
+    }
+}

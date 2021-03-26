@@ -51,3 +51,16 @@ nav div a:hover {
     border: none;
     border-bottom: solid #747d8c 2px;
 }
+
+/* Message */
+@keyframes new_message_anim {
+    0% {
+        color: #2f3542 ;
+    }
+    50% {
+        color: #2ed573;
+    }
+    100% {
+        color: #2f3542;
+    }
+}
