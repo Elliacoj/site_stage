@@ -75,7 +75,7 @@ select {
 }
 
 /* For all: FONT-SIZE */
-#navigation_bar, #nav_welcome_message, .section_show_more, .message {
+#navigation_bar, #nav_welcome_message, .section_show_more {
     font-size: 1.3rem;
 }
 
@@ -175,6 +175,10 @@ nav i {
 }
 
 /* Messages */
+.message {
+    font-size: 1.4rem;
+}
+
 .new_message {
     animation-name: new_message_anim;
     animation-duration: 1.5s;

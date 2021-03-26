@@ -112,3 +112,8 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+/* Message */
+.message {
+    padding-right: 1rem;
+}
