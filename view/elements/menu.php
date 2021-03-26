@@ -1,6 +1,13 @@
 <div id="navigation_bar">
     <header>
         <h1>App</h1>
+<?php
+    if (isset($_SESSION['role']) && $_SESSION['role'] === 'administrateur') {
+?>
+        <i class="fas fa-comment-dots message new_message"></i>
+<?php
+    }
+?>
     </header>
 
     <div id="navigation_open"><i class="fas fa-bars"></i></div>

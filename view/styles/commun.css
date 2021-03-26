@@ -75,7 +75,7 @@ select {
 }
 
 /* For all: FONT-SIZE */
-#navigation_bar, #nav_welcome_message, .section_show_more {
+#navigation_bar, #nav_welcome_message, .section_show_more, .message {
     font-size: 1.3rem;
 }
 
@@ -172,4 +172,11 @@ nav i {
 
 .account_options div {
     justify-content: center;
+}
+
+/* Messages */
+.new_message {
+    animation-name: new_message_anim;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
 }
