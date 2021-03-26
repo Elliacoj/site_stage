@@ -1,6 +1,18 @@
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/require.php";
+
+$commentaries = new CommentaryController();
+$commentaries = $commentaries->getCommentary();
+
+$date = strtotime("1 month ago");
+
+foreach ($commentaries as $commentary) {
+    if($date > strtotime($commentary->getDate())) {
+        $del = new CommentaryController();
+        $del->deleteCommentary($commentary->getId());
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">

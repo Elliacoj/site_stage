@@ -20,4 +20,12 @@ class CommentaryController
     public function addCommentary($data) {
         return ObjectController::add("INSERT INTO commentary (commentary, user_fk, document_fk) VALUES ($data)");
     }
+
+    /**
+     * Delete a commentary in table commentary
+     * @param $id
+     */
+    public function deleteCommentary($id) {
+        ObjectController::delete("DELETE FROM commentary WHERE id = $id");
+    }
 }
