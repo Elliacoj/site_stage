@@ -198,6 +198,11 @@ nav div a:hover {
     text-decoration-line: underline;
 }
 
+.commentaire_list {
+    display: flex;
+    flex-direction: column;
+}
+
 .modale .commentaire_list {
     margin-bottom: 2rem;
 }
