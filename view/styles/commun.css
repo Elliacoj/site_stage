@@ -210,6 +210,7 @@ nav div a:hover {
 
 .modale .commentaire_list {
     margin-bottom: 2rem;
+    padding-bottom: 0 !important;
 }
 
 /* Messages */
@@ -221,6 +222,10 @@ nav div a:hover {
     animation-name: new_message_anim;
     animation-duration: 1.5s;
     animation-iteration-count: infinite;
+}
+
+.un_commentaire {
+    padding-left: 0.5rem;
 }
 
 .un_commentaire:first-child {
