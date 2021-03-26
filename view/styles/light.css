@@ -1,5 +1,5 @@
 /*For all: Color */
-body {
+body, .commentaire_list {
     background-color: #dfe4ea;
 }
 
@@ -31,10 +31,6 @@ a, button {
 
 button:hover {
     border: solid #2ed573 3px;
-}
-
-nav div a:hover {
-    color: #2ed573;
 }
 
 /* Checkbox */

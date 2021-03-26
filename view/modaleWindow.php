@@ -113,11 +113,11 @@ if(isset($_GET['docCreate'])) {
         <form action="../create.php?error=0&table=Document&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="title">Titre: </label>
-                <input type="text" name="title" id="title" required">
+                <input type="text" name="title" id="title" required>
             </div>
             <div>
                 <label for="link">lien: </label>
-                <input type="text" name="link" id="link" required">
+                <input type="text" name="link" id="link" required>
             </div>
             <div>
                 <label for="file"></label>
@@ -172,20 +172,22 @@ if(isset($_GET['docComment'])) {
         $comments = new CommentaryController();
         $comments = $comments->getCommentary();
 
+        echo '<div class="commentaire_list">';
         foreach($comments as $comment) {
             if($comment->getDocument()->getId() == $_GET['docComment']) {
                 ?>
-                <div>
-                    <span><?=$comment->getDate() . "# " . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?></span>
+                <div class="un_commentaire">
+                    <?=$comment->getDate() . "# " . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?>
                 </div>
                 <?php
             }
         }
+        echo '</div>';
         ?>
         <form action="../create.php?error=0&document=<?=$doc->getId()?>&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="commentary">Commentaire: </label>
-                <input type="text" name="commentary" id="commentary" required">
+                <input type="text" name="commentary" id="commentary" required>
             </div>
             <div class="account_options">
                 <div>
