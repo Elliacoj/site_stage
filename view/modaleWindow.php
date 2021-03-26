@@ -1,4 +1,5 @@
 <?php
+// Modal for modif a User
 if(isset($_GET['userModif'])) {
     $user = new UserController();
     $user = $user->logUser(strip_tags(trim($_GET['userModif'])));
@@ -47,6 +48,7 @@ if(isset($_GET['userModif'])) {
 <?php
 }
 
+// Modal for modif a Document
 if(isset($_GET['docModif'])) {
     $document = new DocumentController();
     $document = $document->searchDocument(strip_tags(trim($_GET['docModif'])));
@@ -104,6 +106,7 @@ if(isset($_GET['docModif'])) {
 <?php
 }
 
+// Modal for create a Document
 if(isset($_GET['docCreate'])) {
     ?>
     <div id="modaleUser" class="modale">
@@ -145,6 +148,30 @@ if(isset($_GET['docCreate'])) {
                     }
                     ?>
                 </select>
+            </div>
+            <div class="account_options">
+                <div>
+                    <button type="submit">Confirmer</button>
+                    <a href='<?=$_GET['doc']?>'><button type="button" class="delete_button">Annuler</button></a>
+                </div>
+            </div>
+        </form>
+    </div>
+    <?php
+}
+
+// Modal for create a commentary
+if(isset($_GET['docComment'])) {
+    $doc = new DocumentController();
+    $doc = $doc->searchDocument($_GET['id']);
+    ?>
+    <div id="modaleUser" class="modale">
+        <h2><?=$doc->getTitle()?></h2>
+
+        <form action="../create.php?error=0&table=Document&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="commentary">Commentaire: </label>
+                <input type="text" name="commentary" id="commentary" required">
             </div>
             <div class="account_options">
                 <div>
