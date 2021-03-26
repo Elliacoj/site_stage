@@ -176,13 +176,13 @@ if(isset($_GET['docComment'])) {
             if($comment->getDocument()->getId() == $_GET['docComment']) {
                 ?>
                 <div>
-                    <span><?=$comment->getDate() . "/ " . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?></span>
+                    <span><?=$comment->getDate() . "# " . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?></span>
                 </div>
                 <?php
             }
         }
         ?>
-        <form action="../create.php?error=0&table=Document&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
+        <form action="../create.php?error=0&document=<?=$doc->getId()?>&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="commentary">Commentaire: </label>
                 <input type="text" name="commentary" id="commentary" required">

@@ -59,6 +59,7 @@ foreach($categories as $category) {
                                 <div class="section_documents_item_tittle">
                                     <a class="linkDoc" href="" data-href="<?= $document->getLink()?>" data-type="exo" target="_blank"><i class="fab fa-github"></i> <?= $document->getTitle()?></a>
                                 </div>
+                                <a href="exercices.php?docComment=<?= $document->getId()?>&doc=exercices.php"><i class="fas fa-comment-dots message"></i></a>
                                 <div class="section_show_button">
                                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                                         <a href="exercices.php?docModif=<?= $document->getId()?>&doc=exercices.php"><button>Modifier</button></a>
@@ -124,6 +125,7 @@ foreach($categories as $category) {
                                 <div class="section_documents_item_tittle">
                                     <a class="linkDoc" href="" data-href="<?= $document->getLink()?>" data-type="exo" target="_blank"><i class="fab fa-github"></i> <?= $document->getTitle()?></a>
                                 </div>
+                                <a href="exercices.php?docComment=<?= $document->getId()?>&doc=exercices.php"><i class="fas fa-comment-dots message"></i></a>
                                 <div class="section_show_button">
                                     <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                                         <a href="exercices.php?docModif=<?= $document->getId()?>&doc=exercices.php"><button>Modifier</button></a>

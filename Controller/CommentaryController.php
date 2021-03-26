@@ -18,6 +18,6 @@ class CommentaryController
      * @return false|int
      */
     public function addCommentary($data) {
-        return ObjectController::add("INSERT INTO commentary VALUES ($data)");
+        return ObjectController::add("INSERT INTO commentary (commentary, user_fk, document_fk) VALUES ($data)");
     }
 }

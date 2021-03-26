@@ -68,3 +68,21 @@ if(isset($_GET['table'], $_GET['error']) && $_GET['error'] == 0 && $_GET['table'
 if(isset($_GET['error'], $_POST['name']) && $_GET['error'] === "0") {
     create("administration.php");
 }
+
+if(isset($_GET['error'], $_POST['commentary']) && $_GET['error'] === "0") {
+    $checkData = "'" . addslashes(strip_tags(trim($_POST['commentary']))) . "'";
+    $checkData .= ", '" . strip_tags(trim($_SESSION['id'])) . "'";
+    $checkData .= ", '" . strip_tags(trim($_GET['document'])) . "'";
+
+    $new = new CommentaryController();
+    $state = $new->addCommentary($checkData);
+
+    if($state) {
+        // utilisateur bien enregistré
+        header("location: ./view/" . $_GET['doc'] . "?error=4");
+    }
+    else {
+        // erreur dans l'enregistrement
+        header("location: ./view/" . $_GET['doc'] . "?error=5");
+    }
+}
