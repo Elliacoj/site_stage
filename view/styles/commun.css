@@ -83,7 +83,7 @@ header {
     font-size: 0.8rem;
 }
 
-#page_container, button, .cancel, #admin_add_account form input, .modale div label, .modale div input, select,  .modale span {
+#page_container, button, .cancel, #admin_add_account form input, .modale div label, .modale div input, select,  .modale .un_commentaire {
     font-size: 1rem;
 }
 
@@ -147,7 +147,11 @@ nav i {
     visibility: hidden;
 }
 
-/* Nav */
+/* Commun color */
+nav div a:hover {
+    color: #2ed573;
+}
+
 #navigation_bar {
     border-right: solid #2ed573 6px;
 }
@@ -168,7 +172,7 @@ nav i {
 }
 
 .modale div label {
-    width: 30%;
+    width: 20%;
 }
 
 .modale form {
@@ -189,7 +193,13 @@ nav i {
 }
 
 .modale h2 {
+    text-align: center;
+    margin-bottom: 2rem;
     text-decoration-line: underline;
+}
+
+.modale .commentaire_list {
+    margin-bottom: 2rem;
 }
 
 /* Messages */

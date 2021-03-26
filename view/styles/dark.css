@@ -1,5 +1,5 @@
 /*For all: color */
-body {
+body, .commentaire_list {
     background-color: #57606f;
 }
 
@@ -37,16 +37,12 @@ input, select {
 }
 
 /*Hover color */
-button:hover, .cancel:hover {
+button:hover {
     border: solid #2ed573 2px;
 }
 
 #nav_logout_button:hover, .account_delete:hover, .button_delete:hover {
     border: solid #ff6348 2px;
-}
-
-nav div a:hover {
-    color: #2ed573;
 }
 
 /* Checkbox */
