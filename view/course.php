@@ -67,7 +67,7 @@ foreach($categories as $category) {
                     <div class="section_documents_item_tittle">
                         <a class="linkDoc" href="" data-href="<?= $document->getLink()?>" data-type="slide" target="_blank"><?= $document->getTitle()?></a>
                     </div>
-                    <i class="fas fa-comment-dots message"></i>
+                    <a href="course.php?docComment=<?= $document->getId()?>&doc=course.php"><i class="fas fa-comment-dots message"></i></a>
                     <div class="section_show_button">
                         <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                             <a href="course.php?docModif=<?= $document->getId()?>&doc=course.php"><button>Modifier</button></a>

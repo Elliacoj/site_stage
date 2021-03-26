@@ -163,11 +163,24 @@ if(isset($_GET['docCreate'])) {
 // Modal for create a commentary
 if(isset($_GET['docComment'])) {
     $doc = new DocumentController();
-    $doc = $doc->searchDocument($_GET['id']);
+    $doc = $doc->searchDocument($_GET['docComment']);
     ?>
     <div id="modaleUser" class="modale">
         <h2><?=$doc->getTitle()?></h2>
+        <?php
+        $comments = new CommentaryController();
+        $comments = $comments->getCommentary();
 
+        foreach($comments as $comment) {
+            if($comment->getDocument()->getId() == $_GET['docComment']) {
+                ?>
+                <div>
+                    <span><?=$comment->getDate() . "/ " . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?></span>
+                </div>
+                <?php
+            }
+        }
+        ?>
         <form action="../create.php?error=0&table=Document&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="commentary">Commentaire: </label>

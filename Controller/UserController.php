@@ -45,4 +45,13 @@ class UserController
     public function updateUser($title, $value, $id) {
         ObjectController::update("UPDATE user SET $title = '$value' WHERE id = '$id'");
     }
+
+    /**
+     * Return one data of user table
+     * @param $id
+     * @return object
+     */
+    public function searchUser($id): object {
+        return ObjectController::search("SELECT * FROM user WHERE id = $id LIMIT 1", User::class);
+    }
 }
