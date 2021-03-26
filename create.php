@@ -79,10 +79,10 @@ if(isset($_GET['error'], $_POST['commentary']) && $_GET['error'] === "0") {
 
     if($state) {
         // utilisateur bien enregistré
-        header("location: ./view/" . $_GET['doc'] . "?error=4");
+        header("location: ./view/" . $_GET['doc'] . "?docComment=$_GET[document]&doc=$_GET[doc]");
     }
     else {
         // erreur dans l'enregistrement
-        header("location: ./view/" . $_GET['doc'] . "?error=5");
+        header("location: ./view/" . $_GET['doc'] . "?error=4&docComment=$_GET[document]&doc=$_GET[doc]");
     }
 }

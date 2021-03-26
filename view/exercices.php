@@ -16,6 +16,9 @@ if (isset($_GET['error'])){
     else if ($_GET['error'] === '2') {
         echo '<div id="error_problem">Ce document existe déjà!</div>';
     }
+    else if ($_GET['error'] === '4') {
+        echo "<div id='error_problem'>L'envoi du message a échoué!</div>";
+    }
 }
 
 $categories = new CategoryController();

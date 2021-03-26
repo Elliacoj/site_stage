@@ -36,3 +36,11 @@ if(isset($_GET['id'], $_GET['table'])) {
         header("location: ./view/" . $_GET['doc'] . "?error=0");
     }
 }
+
+if(isset($_GET['comment'])) {
+    $del = new CommentaryController();
+    $del->deleteCommentary(strip_tags(trim($_GET['comment'])));
+
+    header("location: ./view/" . $_GET['doc'] . "?doc=$_GET[doc]&docComment=$_GET[document]");
+
+}
