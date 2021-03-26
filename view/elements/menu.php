@@ -56,7 +56,7 @@
 <?php
     if (isset($_SESSION['role'])) {
 ?>
-        <a href="<?= $rootHtml ?>/logout.php"><button id='nav_logout_button'>Logout</button></a>
+        <a href="<?=$rootHtml?>/logout.php"><button id='nav_logout_button'>Logout</button></a>
 <?php
     }
 ?>
