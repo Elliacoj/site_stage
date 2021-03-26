@@ -177,7 +177,7 @@ if(isset($_GET['docComment'])) {
             if($comment->getDocument()->getId() == $_GET['docComment']) {
                 ?>
                 <div class="un_commentaire">
-                    <span class="date"><?=$comment->getDate() . "# </span>" . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?>
+                    <span class="date"><?=$comment->getDate() . " </span><strong>" . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . "&nbsp;>&nbsp;</strong> " . $comment->getCommentary()?>
                         <?php if(($_SESSION['id'] === $comment->getUser()->getId()) || $_SESSION['role'] === "administrateur") {
                         ?>
                             <a href="../delete.php?error=0&comment=<?=$comment->getId()?>&document=<?=$doc->getId()?>&doc=<?=$_GET['doc']?>"><i class="fas fa-window-close delete_message"></i></a>

@@ -218,6 +218,10 @@ nav div a:hover {
     right: 1.5rem;
 }
 
+.delete_message:hover {
+    color: #ff4757;
+}
+
 /* Messages */
 .message {
     font-size: 1.4rem;
