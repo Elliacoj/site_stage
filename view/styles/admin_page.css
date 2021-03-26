@@ -1,15 +1,11 @@
 @media screen and (min-width: 1000px){
 
-    #admin_section form, #admin_section div, .accounts_results {
+    #admin_section form, #admin_section div, .accounts_results, #admin_add_account form {
         flex-direction: row;
     }
 
     #admin_section div {
         width: 50%;
-    }
-
-    #admin_add_account form {
-        flex-direction: row;
     }
 
     #admin_add_account form div {
