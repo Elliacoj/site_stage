@@ -178,6 +178,7 @@ if(isset($_GET['docComment'])) {
                 ?>
                 <div class="un_commentaire">
                     <span class="date"><?=$comment->getDate() . "# </span>" . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?>
+                        <i class="fas fa-window-close delete_message"></i>
                 </div>
                 <?php
             }
