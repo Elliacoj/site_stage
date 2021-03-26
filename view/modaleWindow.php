@@ -177,7 +177,7 @@ if(isset($_GET['docComment'])) {
             if($comment->getDocument()->getId() == $_GET['docComment']) {
                 ?>
                 <div class="un_commentaire">
-                    <?=$comment->getDate() . "# " . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?>
+                    <span class="date"><?=$comment->getDate() . "# </span>" . $comment->getUser()->getLastname() . " " . $comment->getUser()->getFirstname() . ": " . $comment->getCommentary()?>
                 </div>
                 <?php
             }

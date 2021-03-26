@@ -183,6 +183,11 @@ nav div a:hover {
     justify-content: center;
 }
 
+.date {
+    color: #ff6348;
+    padding-right: 0.5rem;
+}
+
 .modale_close {
     font-size: 2rem;
     position: absolute;
