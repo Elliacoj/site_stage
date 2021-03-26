@@ -167,6 +167,7 @@ if(isset($_GET['docComment'])) {
     ?>
     <div id="modaleUser" class="modale">
         <h2><?=$doc->getTitle()?></h2>
+        <a href='<?=$_GET['doc']?>'><i class="fas fa-window-close modale_close"></i></a>
         <?php
         $comments = new CommentaryController();
         $comments = $comments->getCommentary();
@@ -189,7 +190,6 @@ if(isset($_GET['docComment'])) {
             <div class="account_options">
                 <div>
                     <button type="submit">Confirmer</button>
-                    <a href='<?=$_GET['doc']?>'><button type="button" class="delete_button">Annuler</button></a>
                 </div>
             </div>
         </form>

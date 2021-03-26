@@ -7,10 +7,6 @@ body {
     background-color: #f1f2f6;
 }
 
-#navigation_bar {
-    border-right: solid #2ed573 6px;
-}
-
 body, a i, .section_show_more i, button i, .show_button, button:hover, select {
     color: #57606f;
 }
