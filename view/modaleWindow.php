@@ -113,11 +113,11 @@ if(isset($_GET['docCreate'])) {
         <form action="../create.php?error=0&table=Document&doc=<?=$_GET['doc']?>" method="POST" enctype="multipart/form-data">
             <div>
                 <label for="title">Titre: </label>
-                <input type="text" name="title" id="title" required>
+                <input type="text" name="title" id="title" required">
             </div>
             <div>
                 <label for="link">lien: </label>
-                <input type="text" name="link" id="link" required>
+                <input type="text" name="link" id="link" required">
             </div>
             <div>
                 <label for="file"></label>
