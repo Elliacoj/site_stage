@@ -19,6 +19,18 @@ include './elements/header.php';
     }
 ?>
 
+    <div id="admin_day_message">
+        <h2>Message d'accueil:</h2>
+        <form>
+            <div>
+                <input type="text">
+            </div>
+            <div>
+                <button type="button" id="buttonDelCat" class="delete_button">Valider</button>
+            </div>
+        </form>
+    </div>
+
     <div id="admin_section">
         <div>
             <h2>Ajouter une catégorie:</h2>
