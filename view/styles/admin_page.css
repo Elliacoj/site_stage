@@ -1,6 +1,6 @@
 @media screen and (min-width: 1000px){
 
-    #admin_section form, #admin_section div, .accounts_results, #admin_add_account form {
+    #admin_section form, #admin_section div, .accounts_results, #admin_add_account form, #admin_day_message form {
         flex-direction: row;
     }
 
@@ -26,10 +26,22 @@ h2 {
     margin-bottom: 0.5rem;
 }
 
-#admin_add_account, #admin_section, #accounts_list_search, #accounts_results_screen, #error_no_problem, #error_problem, #error_problem_mail {
+#admin_add_account, #admin_section, #accounts_list_search, #accounts_results_screen, #error_no_problem, #error_problem, #error_problem_mail, #admin_day_message {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: solid #2f3542 1px;
+}
+
+#admin_day_message h2 {
+    width: 20%;
+}
+
+#admin_day_message form{
+    width: 80%;
+}
+
+#admin_day_message input {
+    width: 20rem;
 }
 
 .accounts_results {
@@ -56,8 +68,12 @@ h2 {
     justify-content: flex-end;
 }
 
-#admin_add_account form input, #admin_section form input{
+#admin_add_account form input, #admin_section form input, #admin_day_message form input {
     padding: 0.5rem 0.5rem;
+}
+
+#admin_day_message h2, #admin_day_message div {
+    margin-right: 1rem;
 }
 
 /*Error message */
