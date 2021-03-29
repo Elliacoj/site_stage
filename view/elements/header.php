@@ -7,6 +7,10 @@ $commentaries = $commentaries->getCommentary();
 
 $date = strtotime("1 month ago");
 
+if(($_SERVER['REQUEST_URI'] !== "/site_stage/view/index.php") && (isset($_SESSION['id']) === false)) {
+    header("location: ./index.php");
+}
+
 foreach ($commentaries as $commentary) {
     if($date > strtotime($commentary->getDate())) {
         $del = new CommentaryController();
