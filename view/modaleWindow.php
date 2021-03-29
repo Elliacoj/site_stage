@@ -75,7 +75,7 @@ if(isset($_GET['docModif'])) {
                 $categories = $category->getCategory();
                 foreach ($categories as $item) {
                     /* @var Category $item */
-                    $selected = $item->getName() === $document->getCategory() ? 'selected' : '';
+                    $selected = $item->getId() == $document->getCategoryId() ? 'selected' : '';
                     echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
                 }
                 ?>
@@ -130,8 +130,8 @@ if(isset($_GET['docCreate'])) {
                     $category = new CategoryController();
                     $categories = $category->getCategory();
                     foreach ($categories as $item) {
-                        $selected = $item->getName() === $_GET['category'] ? 'selected' : '';
-                        echo "<option value='" . $item->getId() . "' ".$selected.">" . $item->getName() . "</option>";
+                        $selected = $item->getId() == $_GET['category'] ? 'selected' : '';
+                        echo "<option value='" . $item->getId() . "' ". $selected .">" . $item->getName() . "</option>";
                     }
                     ?>
                 </select>

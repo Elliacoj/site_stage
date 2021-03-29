@@ -41,7 +41,7 @@ foreach($categories as $category) {
                 </div>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                 <div class="section_option">
-                    <a href="evaluations.php?docCreate=1&category=<?= $category->getName()?>&item=evaluation&doc=evaluations.php"><i class="fas fa-folder-plus section_add_document"></a></i>
+                    <a href="evaluations.php?docCreate=1&category=<?= $category->getId()?>&item=evaluation&doc=evaluations.php"><i class="fas fa-folder-plus section_add_document"></a></i>
                 </div>
                 <?php } ?>
             </div>
@@ -107,7 +107,7 @@ foreach($categories as $category) {
                 </div>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                     <div class="section_option">
-                        <a href="evaluations.php?docCreate=1&category=<?= $category->getName()?>&item=evaluation&doc=evaluations.php"><i class="fas fa-folder-plus section_add_document"></a></i>
+                        <a href="evaluations.php?docCreate=1&category=<?= $category->getId()?>&item=evaluation&doc=evaluations.php"><i class="fas fa-folder-plus section_add_document"></a></i>
                     </div>
                 <?php } ?>
             </div>

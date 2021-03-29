@@ -41,7 +41,7 @@ foreach($categories as $category) {
                 </div>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                 <div class="section_option">
-                    <a href="course.php?docCreate=1&category=<?= $category->getName()?>&item=slide&doc=course.php"><i class="fas fa-folder-plus section_add_document"></a></i>
+                    <a href="course.php?docCreate=1&category=<?=$category->getId()?>&item=slide&doc=course.php"><i class="fas fa-folder-plus section_add_document"></a></i>
                 </div>
                 <?php } ?>
 
@@ -115,7 +115,7 @@ $check = "";
                 </div>
                 <?php if(isset($_SESSION['role']) && $_SESSION['role'] === "administrateur") {?>
                     <div class="section_option">
-                        <a href="course.php?docCreate=1&category=<?= $category->getName()?>&item=slide&doc=course.php"><i class="fas fa-folder-plus section_add_document"></a></i>
+                        <a href="course.php?docCreate=1&category=<?= $category->getId()?>&item=slide&doc=course.php"><i class="fas fa-folder-plus section_add_document"></a></i>
                     </div>
                 <?php } ?>
 

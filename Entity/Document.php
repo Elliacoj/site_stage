@@ -77,12 +77,21 @@ class Document
     }
 
     /**
-     * Return the category of Document
+     * Return the category name of Document
      * @return string|null
      */
     public function getCategory(): ?string
     {
         return $this->category->getName();
+    }
+
+    /**
+     * Return the category id of Document
+     * @return string|null
+     */
+    public function getCategoryId(): ?string
+    {
+        return $this->category->getId();
     }
 
     /**
