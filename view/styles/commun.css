@@ -240,3 +240,9 @@ nav div a:hover {
 .un_commentaire:first-child {
     padding-top: 1rem !important;
 }
+
+#home_day_message {
+    font-size: 3rem !important;
+    font-style: italic;
+    color: #2ed573;
+}
