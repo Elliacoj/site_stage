@@ -6,6 +6,7 @@ let choiceCat = $('#choiceCat');
 let divUser = $('.accounts_results');
 let deleteDocument = $('.button_delete');
 let buttonDelCat = $('#buttonDelCat');
+let link = $('.botUpdate');
 
 // Blind all document
 $('.section_documents').each(function() {
@@ -127,4 +128,17 @@ choiceCat.on('change', function () {
             $(this).hide();
         }
     })
+})
+
+
+link.click(function () {
+
+    if($(this).prop("checked")) {
+        $.ajax({
+            type: "GET",
+            url: 'http://localhost:3000/message?',
+            data: 'doc=' + $(this).attr("data-link"),
+            crossDomain: true,
+        });
+    }
 })

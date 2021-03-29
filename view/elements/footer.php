@@ -12,7 +12,6 @@
         <script src="./scripts/dark_mode.js"></script>
         <script src="./scripts/nav_mobile_version.js"></script>
         <script src="./scripts/update.js"></script>
-
 </body>
 
 </html>

@@ -68,7 +68,15 @@ foreach($categories as $category) {
                                         <a href="exercices.php?docModif=<?= $document->getId()?>&doc=exercices.php"><button>Modifier</button></a>
                                         <button class="button_delete" data-doc="exercices.php" value="<?= $document->getId()?>">X</button>
                                         <label class="section_show_label">
-                                            <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
+                                            <?php
+                                            if(strpos($document->getLink(), 'https') === 0) {
+                                                $url = $document->getLink();
+                                            }
+                                            else {
+                                                $url = urlencode($_SERVER['HTTP_HOST'] . $rootHtml . "/file/" . $document->getItem() . "/" .$document->getLink());
+                                            }
+                                            ?>
+                                            <input type="checkbox" class="show_button botUpdate" data-link="<?= $url ?>" value="<?= $document->getId()?>" <?= $checkDoc?>>
                                             <span class="section_checkmark"></span>
                                         </label>
                                     <?php } ?>
@@ -134,7 +142,15 @@ foreach($categories as $category) {
                                         <a href="exercices.php?docModif=<?= $document->getId()?>&doc=exercices.php"><button>Modifier</button></a>
                                         <button class="button_delete" data-doc="exercices.php" value="<?= $document->getId()?>">X</button>
                                         <label class="section_show_label">
-                                            <input type="checkbox" class="show_button" value="<?= $document->getId()?>" <?= $checkDoc?>>
+                                            <?php
+                                            if(strpos($document->getLink(), 'https') === 0) {
+                                                $url = $document->getLink();
+                                            }
+                                            else {
+                                                $url = urlencode($_SERVER['HTTP_HOST'] . $rootHtml . "/file/" . $document->getItem() . "/" .$document->getLink());
+                                            }
+                                            ?>
+                                            <input type="checkbox" class="show_button botUpdate" data-link="<?= $url ?>" " value="<?= $document->getId() ?>" <?= $checkDoc?>>
                                             <span class="section_checkmark"></span>
                                         </label>
                                     <?php } ?>
