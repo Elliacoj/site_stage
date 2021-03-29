@@ -15,6 +15,7 @@ require_once $root . "/Entity/User.php";
 require_once $root . "/Entity/Document.php";
 require_once $root . "/Entity/Section.php";
 require_once $root . "/Entity/Commentary.php";
+require_once $root . "/Entity/Message_home.php";
 require_once $root . "/Controller/CategoryController.php";
 require_once $root . "/Controller/UserController.php";
 require_once $root . "/Controller/ItemController.php";
@@ -22,6 +23,6 @@ require_once $root . "/Controller/RoleController.php";
 require_once $root . "/Controller/DocumentController.php";
 require_once $root . "/Controller/SectionController.php";
 require_once $root . "/Controller/CommentaryController.php";
-
+require_once $root . "/Controller/Message_homeController.php";
 
 

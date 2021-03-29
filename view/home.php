@@ -9,7 +9,15 @@ include './elements/header.php';
     </div>
     <div id="home_day_message">
         <div>
-            Message blabla.
+            <?php
+                $message = new Message_homeController();
+                $message = $message->getMessage_home();
+                if(count($message) !== 0) {
+                    foreach ($message as $value) {
+                        echo $value->getText();
+                    }
+                }
+            ?>
         </div>
     </div>
 

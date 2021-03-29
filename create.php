@@ -86,3 +86,13 @@ if(isset($_GET['error'], $_POST['commentary']) && $_GET['error'] === "0") {
         header("location: ./view/" . $_GET['doc'] . "?error=4&docComment=$_GET[document]&doc=$_GET[doc]");
     }
 }
+
+if(isset($_GET['error'], $_POST['message_home']) && $_GET['error'] === "0") {
+    $message = addslashes(strip_tags(trim($_POST['message_home'])));
+
+    $message_home = new Message_homeController();
+    $message_home->deleteMessage_home();
+    $message_home->addMessage_home($message);
+
+    header("location: ./view/administration.php?error=0");
+}

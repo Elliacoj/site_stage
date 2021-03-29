@@ -21,12 +21,12 @@ include './elements/header.php';
 
     <div id="admin_day_message">
         <h2>Message d'accueil:</h2>
-        <form>
+        <form method="POST" action="../create.php?error=0">
             <div>
-                <input type="text">
+                <input type="text" name="message_home">
             </div>
             <div>
-                <button type="button" id="buttonDelCat" class="delete_button">Valider</button>
+                <input type="submit" class="delete_button" value="Valider">
             </div>
         </form>
     </div>
