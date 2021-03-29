@@ -23,10 +23,10 @@ include './elements/header.php';
         <h2>Message d'accueil:</h2>
         <form method="POST" action="../create.php?error=0">
             <div>
-                <input type="text" name="message_home">
+                <input type="text" name="message_home" required>
             </div>
-            <div>
-                <input type="submit" class="delete_button" value="Valider">
+            <div class="account_options">
+                <button type="submit">Valider</button>
             </div>
         </form>
     </div>
